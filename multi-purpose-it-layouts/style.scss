@@ -1,0 +1,6994 @@
+@import "mixin";
+html{
+    font-size: 68.75%;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+a, abbr, acronym, address, applet, big, blockquote, body, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, ul, var {
+	border: 0;
+	margin: 0;
+	outline: none !important;
+	padding: 0;
+	vertical-align: baseline;
+	font-family: 'Rubik', sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	background-repeat: repeat-x;
+	font-size:1.4rem;
+	color:#272320;
+}
+a{
+	color:inherit;
+	outline: none !important;
+    text-decoration: none;
+	&:hover{
+		color:inherit;
+		text-decoration:none;
+	}
+}
+h1,h2,h3{
+    font-family: "Rajdhani",sans-serif;
+    
+}
+.dropdown-toggle::after{
+    border: none !important;
+    content: "\f107";
+    font-family: "fontAwesome";
+    top:8px;
+    right: -8px;
+    position: absolute;
+}
+button{
+&:focus{
+	outline: none !important;
+}
+}
+ol {
+	padding-left: 0;
+	& li {
+		list-style: inherit;
+	}
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+    margin: 0;
+	& li{
+		list-style: none;
+	}
+}
+
+img {
+	vertical-align: top;
+	max-width:100%;
+	border: none;
+	outline: none;
+}
+.btn{
+	border: none !important;
+	&:focus{
+		box-shadow: none;
+		border: none;
+		outline: 0;
+	}
+}
+
+.btn:focus,
+.form-control:focus,
+.resizeselect:focus{
+	box-shadow: none;
+	border: none;
+	outline: 0;
+}
+
+$primary-color:#0060ff;
+// $primary-color:#0031c7;
+$secondary-color:#0b132b;
+
+
+
+header{
+    & .dropdown-submenu {
+        position: relative;
+    }
+    
+    & .dropdown-submenu>.dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+    
+    & .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+    
+    & .dropdown-submenu:hover>.dropdown-menu {
+        display: block;
+    }
+    
+    & .dropdown-submenu>a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #ccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+    
+    & .dropdown-submenu:hover>a:after {
+        border-left-color: #fff;
+    }
+    
+    
+}
+
+// header design 1
+
+.header-one{
+   & .top-sction-head{
+    background: $secondary-color;
+    color: #fff;
+    overflow: hidden;
+    &::after{
+        position: absolute;
+        right: 0;
+        top:0;
+        content: "";
+        height: 55px;
+        width: 145px;
+        background: $primary-color;
+        display: inline-block;
+    }
+    & i{
+       color: $primary-color;
+       margin-right: 5px;
+       font-size: 18px;
+    }
+    & svg{
+        color: $primary-color; 
+        width: 19px;
+        height: 19px;
+    }
+    & .socal-links{
+        background: $primary-color;
+        height: 55px;
+        position: relative;
+        margin-left: 58px;
+        
+        & li{
+            position: relative;
+            z-index: 2;
+            & a{
+                line-height: 49px;
+                margin: 0 14px;
+                font-size: 18px;
+            }
+        }
+        & i{
+            color: #fff;
+            margin-right: 0;
+        }
+        &::before{
+            position: absolute;
+            left: -15px;
+            top:0;
+            content: "";
+            height: 55px;
+            transform: skewX(-10deg);
+            width: 115px;
+            background: $primary-color;
+            display: inline-block;
+        }
+   
+    }
+   
+   }
+}
+.middle-sction{
+    & .btn-getst{
+        background: $primary-color;
+        color: #fff !important;
+        height: 45px;
+        text-transform: capitalize;
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 1.69rem;
+        border-radius: 6px;
+        line-height: 3.45rem;
+        width: 150px;
+        margin-left: 15px;
+        display: flex;
+        justify-content: center;
+        transition: all 0.5s;
+        &:hover{
+            background: $secondary-color;
+        }
+        & span{
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+        }
+        & svg{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+        }
+    }
+    & .navbar-light .navbar-nav .nav-link{
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        font-size: 1.89rem;
+        color: $secondary-color;
+        padding: 0 1.95rem;
+        transition: all 0.5s;
+        &:hover{
+            color: $primary-color;
+        }
+    }
+    & .navbar-light{
+        & .dropdown{
+            & > .nav-link{
+                &::after{
+                    top: 0;
+                    right: -7px;
+                    position: absolute;
+                    content: "\f107";
+                    font-size: 1.75rem;
+                    font-weight: 600;
+                    font-family: "FontAwesome";
+                }
+            }
+        }
+        
+        
+    }
+}
+
+// banner design 1 css
+
+.banner-part{
+    height: 580px;
+    position: relative;
+    & .banner-text{
+        position: relative;
+        z-index: 2;
+        display: grid;
+        align-content: center;
+        height: 580px;
+        & .btn-more{
+            background: $primary-color;
+            color: #fff;
+            font-size: 1.69rem;
+            width: 150px;
+            margin-top: 18px;
+            line-height: 3rem;
+        }
+        & h5{
+            font-size: 3rem;
+            text-transform: capitalize;
+            font-family: 'Shadows Into Light', cursive;
+            color: $secondary-color;
+        }
+        & p{
+            font-size: 1.69rem;
+        }
+        & h1{
+            font-size: 5rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 900;
+            text-transform: capitalize;
+            line-height: 1.25;
+            position: relative;
+            color: $secondary-color;
+            &:after{
+                position: absolute;
+                background: url(../images/line.png) no-repeat;
+                content: "";
+                left: 0;
+                top: 61px;
+                width: 57%;
+                height: 43px;
+                display: inline-block;
+            }
+            & span{
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                color: $secondary-color;
+              
+            }
+        }
+    }
+    & .banner-img{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:0;
+        width: 100%;
+        height: 580px;
+        & img{
+            @include coverimg;
+        }
+    }
+}
+
+
+// about home design 1
+.body-total-01{
+    padding-top: 100px;
+}
+.about-home-01{
+    & .com-about-us-img{
+        width: 100%;
+        height: 450px;
+        display: inline-block;
+        position: relative;
+
+        & .big-01{
+            display: inline-block;
+            overflow: hidden;
+            width: 400px;
+            width:93%;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .sm01-01{
+            width: 60%;
+            height: 210px;
+            display: inline-block;
+            position: absolute;
+            left: -50px;
+            bottom: 0;
+            border: solid 17px #fff;
+            box-shadow: #0000001f 1px 2px 38px;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    & .com-about-right-h{
+        h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $secondary-color;
+            & span{
+                font-size: 4rem;
+                font-weight: 700;
+                font-family: "Rajdhani",sans-serif;
+            }
+        }
+        & h3{
+            font-family: "Rajdhani",sans-serif;
+            color: $primary-color; 
+            font-size: 4rem;
+            font-weight: 700;
+            & small{
+                font-size: 2rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                & svg{
+                    color: $secondary-color;
+                    width: 20px;
+                    height: 20px; 
+                }
+            }
+            & span{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 1.89rem;
+                color: $secondary-color;
+                font-weight: 700;
+              
+            }
+        }
+    }
+    & h6{
+        font-size: 1.56rem;
+    }
+}
+
+
+
+// services design 1
+
+.services-part-home{
+   background: $primary-color url(../images/1.png) no-repeat;
+   position: relative;
+   background-size: 100%;
+   background-position: top center;
+   margin-top: 90px;
+   padding: 80px 0;
+   & .comon-heading{
+    & h5{
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: "Rajdhani",sans-serif;
+        position: relative;
+        text-transform: uppercase;
+        &:after{
+            width: 50px;
+            height: 4px;
+            background: #fff;
+            content: "";
+            position: relative;
+            display: inline-block;
+            top: -4px;
+            right: -5px;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+        &:before{
+            width: 50px;
+            height: 4px;
+            background: #fff;
+            content: "";
+            position: relative;
+            display: inline-block;
+            top: -4px;
+            left: -5px;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+    }
+    & h1{
+        @include comhead01;
+        color: #fff;
+        margin-top: 5px;
+    }
+    
+   }
+
+   & .com-items{
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 540px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+    margin: 30px 0;
+    & .img-box-serv{
+        height: 340px;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        & figure{
+            display: inline-block;
+            height: 300px; 
+            width: 100%;
+            & img{
+                transform: scale(1);
+                transition: all 0.5s;
+                @include coverimg;
+            }
+        }
+        & .icon-serv{
+            width:80px;
+            height: 80px;
+            display: table;
+            margin: auto;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 14%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 7px;
+            padding: 22px;
+        }
+        
+        
+    }
+    &:hover{
+        & figure{
+            & img{
+                transform: scale(1.1);
+            }
+        }
+    }
+    & .text-serv{
+        padding: 0 30px;
+       
+        & h5{
+            font-size: 2.45rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            color: $secondary-color;
+        }
+        & .btn-r-more{
+            background: $primary-color;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            font-size: 1.76rem;
+            font-weight: 600;
+            padding: 0;
+            height: 50px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: auto;
+            padding-left: 15px;
+            & span{
+                background: $secondary-color;
+                color: #fff;
+                height: 50px;
+                width: 40px;
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+                & svg{
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+   }
+
+}
+
+
+// why scetion home 1
+
+.whychoose-part-home{
+    padding: 80px 0;
+    & .left-part-whyu{
+        & h5{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $primary-color;
+            position: relative;
+            font-weight: 600;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            & span{
+                @include comhead01;  
+            }
+        }
+        & h6{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 1.66rem;
+            font-weight: 600;
+            color: $secondary-color;
+            width: 86%;
+        }
+        & .why-com-div{
+            width: 100%;
+            margin-bottom: 30px;
+            & figure{
+                width: 80px;
+                height: 80px;
+                background: $primary-color;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                padding: 20px;
+                border-radius: 40% 0 40% 40%;
+                & img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+            & .text-why-h{
+                width: 90%;
+                padding-left: 15px;
+                & h5{
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    font-size: 2.55rem;
+                    color: $secondary-color;
+                    &:after{
+                        display: none;
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    & .righty-why{
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+        overflow: hidden;
+        filter: drop-shadow(-1px 10px 18px rgba(50, 50, 0, 0.5));
+        & img{
+            @include coverimg;
+        }
+    }
+}
+
+// team design 1
+.team-part-home{
+    background: #f9f9f9 url(../images/1-bg.png) no-repeat;
+    padding: 80px 0;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 5px;
+        }
+        
+    }
+    & .tema-items{
+        height:360px;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        margin-top: 30px;
+        margin-bottom: 30px;
+        
+        & .tema-details{
+            text-align: center;
+            position: relative;
+            padding-top: 18px;
+            & h5{
+                font-size: 2rem;
+                font-family: "Rajdhani",sans-serif;
+                text-transform: uppercase;
+                position: relative;
+                & span{
+                    font-size: 1.56rem;
+                    color: $primary-color;
+                    margin-top: 5px;
+                }
+            }
+        }
+        & .img-box-team01{
+            height:270px;
+            overflow: hidden;
+            position: relative;
+            & .hover-team{
+                position: absolute;
+                height: 100%;
+                display: grid;
+                z-index: 2;
+                top: 0;
+                padding: 0 29px;
+                background: rgba(0,0,0,70%);
+                left: 0;
+                right: 0;
+                opacity: 0;
+                transition: all 0.5s;
+
+            }
+            & .user-pic{
+                object-position: top;
+                @include coverimg;
+            }
+        }
+        & .soc-t{
+            background: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: grid;
+            padding: 10px;
+            margin: 0 5px;
+            
+            & figure{
+                text-align: center;
+                margin:0 auto !important;
+                width: 88%;
+                & img{
+                    transform: scale(1);
+                    transition: all 0.5s;
+                }
+            }
+        }
+        &:hover{
+            & .hover-team{
+                opacity: 9;
+            }
+            & .soc-t{
+                & figure{
+                    & img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+// cash study design 1
+
+.cash-stuidy-home-01{
+    & .titels-cash{
+        background: $secondary-color url(../images/bg-study01.jpg) no-repeat;
+        background-position: top left;
+        color: #fff;
+        padding:80px 0;
+        & h5{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $primary-color;
+            font-family: "Rajdhani",sans-serif;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        & p{
+            font-size: 1.65rem;
+        }
+
+    }
+
+    & .items-work{
+        height: 400px;
+        & .img-works{
+            height: 300px;
+            width: 100%;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .work-title{
+            background: $primary-color;
+            padding: 20px;
+            & h5{
+                color: #fff;
+                font-size: 2.56rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                & span{
+                    font-weight: 600;
+                    font-family: "Rajdhani",sans-serif;
+                    font-size: 1.65rem;
+                }
+            }
+        }
+    }
+}
+
+
+// how it work design 1
+
+.howit-work-home-01{
+    padding: 80px 0;
+    background: url(../images/1-st.webp) no-repeat;
+    background-position: center center;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 5px;
+        }
+        
+    }
+    & .comon-items-stp{
+        display: inline-block;
+        width: 100%;
+        height: 350px;
+        transform: scale(1);
+        transition: all 0.5s;
+        & .img-sty-box{
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            height: 190px;
+            & .no01{
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                background: $primary-color;
+                color: #fff;
+                border-radius: 50%;
+                bottom: 0;
+                left: 30px;
+                font-size: 2rem;
+                z-index: 2;
+            }
+            & figure{
+                width: 180px;
+                height: 180px;
+                margin:0 auto !important;
+                border-radius: 50%;
+                background: #fff;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    width: 210px;
+                    height: 210px;
+                    /* background: #fff; */
+                    border-radius: 50%;
+                    border: dashed 1px #bbb;
+                    content: "";
+                    left: -15px;
+                    right: 0;
+                    margin: auto;
+                    top: -15px;
+                    z-index: 1;
+                }
+                & img{
+                    @include coverimg;
+                    border-radius: 50%;
+                    
+                }
+            }
+        }
+        & .st-names{
+            margin-top: 25px;
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 2.56rem;
+                color: $secondary-color;
+                font-weight: 700;
+                margin-bottom: 8px;
+                text-transform: capitalize;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    
+}
+
+
+// testimoials design 1
+
+.tetimonals-work-home-01{
+    & .video-sections{
+        position: relative;
+        & .img-videom{
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            top:0;
+            height: 680px;
+            & img{
+                @include coverimg;
+            }
+        }
+    }
+    & .dveo-text{
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        & h1{
+            color: #fff;
+            @include comhead01;
+            & span{
+                color: #fff;
+                @include comhead01; 
+            }
+        }
+        & p{
+            color: #fff;
+            font-size: 1.65rem;
+        }
+        & .btn-more{
+            background: $primary-color;
+            width: 150px;
+            font-size: 1.65rem;
+            font-family: "Rajdhani",sans-serif;
+            height: 45px;
+            line-height: 34px;
+            font-weight: 600;
+            color: #fff;
+            
+        }
+        & .btn-play01{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            color: $primary-color;
+            background: #fff;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            -webkit-animation: murad 1s linear infinite;
+            animation: murad 1.5s linear infinite;
+            -webkit-transition: .5s;
+            font-size: 3rem;
+            z-index: 1;
+            padding-left: 20px;
+
+                }
+    }
+    & .slider-tesr{
+        position: relative;
+        top:50px;
+        & .tems-slider01{
+            background: #fff;
+            padding: 30px;
+            border-radius:8px;
+            height: 400px;
+            box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+            margin-top:30px;
+            margin-bottom: 30px;
+            & .img-userpic{
+                height: 143px;
+                position: relative;
+                width: 100%;
+                & figure{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+                    & img{
+                        @include coverimg;
+
+                    }
+                }
+                & .quite{
+                    background: $primary-color;
+                    width:45px;
+                    height: 45px;
+                    color: #fff;
+                    display: grid;
+                    align-content: center;
+                    justify-content: center;
+                    position: absolute;
+                    right: 40px;
+                    bottom:19px;
+                    border-radius: 50%;
+                }
+            }
+            & .para-details{
+                & h5{
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                    margin-top: 15px;
+                    font-size: 2rem;
+                    & span{
+                        color: $primary-color;
+                        font-family: "Rajdhani",sans-serif;
+                        font-size: 1.45rem;
+                        margin-top: 5px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+// blogs home design 1
+
+.blogs-home-01{
+    padding-top: 120px;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 8px;
+        }
+        
+    }
+    & .items-blogs{
+        height: 520px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        & figure{
+            height: 270px;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .content-post{
+            padding: 10px 30px;
+            & h5{
+                font-size: 2.45rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                margin-bottom: 13px;
+            }
+            & .admin-t{
+                margin-right: 15px;
+                font-weight: 600;
+                & i{
+                    color: $primary-color;
+                    margin-right: 5px;
+                }
+                & span{
+                    font-family: "Rajdhani",sans-serif;
+                }
+            }
+            & .btn-mre{
+                color: $primary-color;
+                font-size: 1.85rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 600;
+                & i{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+//  consult design 1
+.counst-home-01{
+    margin-top: 80px;
+    & .bg-imghj{
+        height: 650px;
+        width: 100%;
+        & img{
+            @include coverimg;
+        }
+    }
+    .form-sections{
+        background: $secondary-color;
+        height: 650px;
+        display: grid;
+        align-content: center;
+        padding: 30px;
+        & .indesi{
+            width: 94%;
+            padding-left: 30px;
+        }
+        & h1{
+            color: #fff;
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        & p{
+            color: $primary-color;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            width: 90%;
+        }
+        & .form-group{
+            margin-bottom: 20px;
+        }
+        & .form-control{
+            height: 50px;
+            background: none;
+            border: solid 1px $primary-color;
+            font-size: 1.45rem;
+            font-family: "Rajdhani",sans-serif;
+            color: #fff;
+            &::placeholder{
+                color: #fff;
+            }
+        }
+        & textarea{
+         height: 150px !important;
+         resize: none;
+        }
+        & .btn-send-ms{
+            background: $primary-color;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            width: 171px;
+            height: 50px;
+        }
+        
+    }
+}
+
+
+// subcribe section design
+
+.sucb-text01{
+    height: 280px;
+    display: grid;
+    align-content: center;
+    padding: 0 20px;
+    & .form-control{
+        height: 50px;
+        font-size: 1.45rem;
+        font-family: "Rajdhani",sans-serif;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        &:focus{
+            background: #e6e6e6;
+        }
+    }
+    & h1{
+        font-size: 3rem;
+        font-family: "Rajdhani",sans-serif;
+        font-weight: 700;
+        color: $secondary-color;
+        text-transform: capitalize;
+    }
+    & p{
+        font-size: 1.56rem;
+    }
+    & .btn-subcibe{
+        background: $primary-color;
+        color: #fff;
+        font-family: "Rajdhani",sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+        text-transform: capitalize;
+        width: 160px;
+        margin-top:0;
+        transition: all 0.5s;
+        &:hover{
+            background: $secondary-color;
+        }
+    }
+    & .btn-close{
+        background: $primary-color;
+        opacity: 9;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        &:hover{
+            background: $secondary-color;
+        }
+        & svg{
+            color: #fff;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+// footer design 1
+
+.sucrbie-div{
+    background: $primary-color;
+    color: #fff;
+    padding: 50px 0;
+   
+    & figure{
+        filter: brightness(0) invert(1);
+        width: 75px;
+
+    }
+    & h1{
+        font-size: 4rem;
+        font-weight: 700;
+        & span{
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+        }
+    }
+    & .btn-subcribe{
+        border: solid 2px #fff !important;
+        width: 180px;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 600;
+        height: 50px;
+        line-height: 42px;
+        font-family: "Rajdhani",sans-serif;
+    }
+}
+
+
+
+// footer design 1
+
+.main-footer01{
+    background: $secondary-color url(../images/members_map_102.png) no-repeat;
+    background-position: center center;
+    & .comon-footer-mns{
+        & .btn{
+            background: #fff;
+            width:40px;
+            height:40px;
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 8px;
+            & figure{
+                width: 70%;
+                margin: auto !important;
+            }
+        }
+    }
+    & .comon-footer-mns{
+        & h5{
+            color: #fff;
+            font-size:3rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+        }
+        & ul.main-links{
+            & li{
+                margin-bottom: 18px;
+                & a{
+                    color: #fff;
+                    font-size: 1.65rem;
+                    font-weight: 500;
+                    font-family: "Rajdhani",sans-serif;
+                    position: relative;
+                    &::before{
+                        position: relative;
+                        content: "";
+                    }
+                }
+            }
+        }
+        & .nextx01{
+            & a{
+                display: flex;
+                align-items: flex-start;
+                & span{
+                    
+                    & svg{
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+        & .post-list{
+           & li{
+            margin-bottom: 20px;
+            & figure{
+                width:80px;
+                height:61px;
+                & img{
+                    @include coverimg;
+                }
+            }
+            & p{
+                color: #fff;
+                margin-left: 10px;
+
+            }
+            & span{
+                color: $primary-color;
+            }
+           }
+            
+        }
+    }
+    & .coply {
+        color: #fff;
+        & a{
+            margin-left: 10px;
+        }
+    }
+    & hr{
+        background: $primary-color;
+    }
+}
+
+.navbar-nav {
+    .dropdown-menu{
+        border: none !important;
+        filter: drop-shadow(-1px 10px 18px rgba(50, 50, 0, 10%));
+        min-width: 19rem !important;
+        & .dropdown-item{
+            font-size: 1.35rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            padding:10px 15px;
+            line-height: normal;
+            transition: all 0.5s;
+            &::before{
+                position: relative;
+                content: "";
+                display: inline-block;
+                width:0;
+                height: 2px;
+                left: 0;
+                top:9px;
+                background: #fff;
+                transition: all 0.5s;
+                float: left;
+                margin-right: 7px;
+                border-radius: 8px;
+                transform: translateX(0);
+                opacity: 0;
+            }
+            &:hover{
+                background:none !important;
+                color:  $primary-color !important;
+                &:before{
+                    transform: translateX(0);
+                    opacity: 9;
+                    width: 21px;
+                    background: $primary-color !important;
+                }
+            }
+           
+        }
+    }
+}
+
+
+
+// banner design 2 css
+
+.banner-part-2{
+    height: 580px;
+    position: relative;
+    &:after{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: rgb(0 0 0 / 54%);
+    }
+    & .banner-text{
+        position: relative;
+        z-index: 2;
+        display: grid;
+        align-content: center;
+        height: 580px;
+        text-align: center;
+        & .btn-more{
+            background: $primary-color;
+            color: #fff;
+            font-size: 1.69rem;
+            width: 150px;
+            margin: auto;
+            display: table;
+            margin-top: 18px;
+            line-height: 3rem;
+        }
+        & h5{
+            font-size: 3rem;
+            text-transform: capitalize;
+            font-family: 'Shadows Into Light', cursive;
+            color: #fff;
+        }
+        & p{
+            font-size: 1.69rem;
+            margin: auto !important;
+            text-align: center;
+            color: #fff;
+        }
+        & h1{
+            font-size: 5rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 900;
+            text-transform: capitalize;
+            line-height: 1.25;
+            position: relative;
+            color: #fff;
+            
+            & span{
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                color: #fff;
+              
+            }
+        }
+    }
+    & .banner-img{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:0;
+        width: 100%;
+        height: 580px;
+        & img{
+            @include coverimg;
+        }
+    }
+}
+
+
+//  about home design -2 
+.comon-feature{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 0 50px rgb(217 217 217 / 70%);
+    padding: 0 30px;
+    & figure{
+        width: 90px;
+        height: 90px;
+        margin: auto;
+        display: table;
+        margin-bottom: 15px;
+        background: $primary-color;
+        box-shadow: 4px 17px 40px rgb(0 96 255 / 65%);
+        border-radius: 50%;
+        overflow: hidden;
+        padding: 22px;
+        & img{
+            filter: brightness(0) invert(1);
+        }
+    }
+    & h5{
+        font-family: "Rajdhani",sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: $secondary-color;
+        margin-top: 15px;
+    }
+    & p{
+        color: #999;
+        margin-top: 15px;
+        font-size: 1.35rem;
+        
+    }
+}
+.progressBar {
+	margin-bottom: 26px;
+	margin-bottom: 1.66em;
+	position: relative;
+	
+}
+.progressBar h4 {
+	font-size: 1.85rem;
+	text-transform: none;
+	margin-bottom: 7px;
+	margin-bottom: .33em;
+	color: $secondary-color;
+    font-family: "Rajdhani",sans-serif;
+    font-weight: 600;
+    font-weight: 700;
+}
+.progressBarcontainer {
+	width: 100%;
+	height: 10px;
+	background: #E1E1E1!important;
+	overflow: hidden;
+	border-radius: 0.3em;
+}
+.progressBarValue {
+	height: 10px;
+	float: left;
+	border-radius: 0.3em;
+	background: $primary-color;
+}
+
+.speech-bubble {
+	font-size: 0.75em;
+	line-height: 2em;
+	position: absolute;
+	top: -0.60em;
+	text-align: center;
+	min-width: 3em;
+	border-radius: 0.3em;
+	color: white;
+	display: none;
+}
+
+.speech-bubble:after {
+	border: 0.5em solid transparent;
+	content: "";
+	margin-left: -0.5em;
+	position: absolute;
+	bottom: -50%;
+	left: 50%;
+}
+
+
+.html {
+	left: calc(88.5% - 1.5em);
+}
+  
+.css{
+	  left: calc(78.5% - 1.5em);
+}
+
+.javascript{
+	left: calc(58.5% - 1.5em);
+} 
+
+.react{
+	left: calc(48.5% - 1.5em);
+}
+
+.jquery{
+	left: calc(58.5% - 1.5em);
+}
+
+.html,
+.css,
+.javascript,
+.react,
+.jquery {
+	background: $primary-color;
+}
+  
+.html:after {
+	border-top-color: $primary-color;
+}
+
+.css:after{
+	border-top-color:$primary-color;
+}
+
+.javascript:after{
+	border-top-color:$primary-color;
+}
+
+.react:after{
+	border-top-color:$primary-color;
+}
+
+.jquery:after{
+	border-top-color:$primary-color;
+}
+
+
+
+
+// achivements
+
+.achivemnets{
+    & .why-com-div{
+        & figure{
+            border-radius: 20% 0 20% 20% !important;
+            width: 70px !important;
+            height: 70px !important;
+            padding: 16px !important;
+        }
+    }
+}
+
+// services design 2
+
+
+.services-part-home-02{
+    background: #f9f9f9  url(../images/bg-dots2.png) no-repeat;
+    position: relative;
+    background-position: top right;
+    margin-top: 90px;
+    padding: 80px 0;
+    & .comon-heading{
+     & h5{
+         color: $primary-color;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: $primary-color;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+      
+     }
+     & h1{
+         @include comhead01;
+         color: $secondary-color;
+         margin-top: 5px;
+     }
+     
+    }
+ 
+    & .com-items{
+     background: #fff;
+     display: inline-block;
+     width: 100%;
+     height: 440px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+     margin: 30px 0;
+     position: relative;
+     & .img-box-serv{
+         height: 440px;
+         display: inline-block;
+         width: 100%;
+         margin: 0;
+         & figure{
+             display: inline-block;
+             height:420px; 
+             width: 100%;
+             margin: 0;
+             & img{
+                 transform: scale(1);
+                 transition: all 0.5s;
+                 @include coverimg;
+             }
+         }
+         & .icon-serv{
+             width:80px;
+             height: 80px;
+             display: table;
+             margin: auto;
+             border-radius: 50%;
+             background: #fff;
+             box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 14%);
+             position: absolute;
+             left: 0;
+             right: 0;
+             bottom: 7px;
+             padding: 22px;
+         }
+         
+         
+     }
+    
+     & .text-serv{
+         padding: 0;
+         display: inline-block;
+         width: 100%;
+         position: absolute;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: #fff;
+         transform: translateY(0);
+         transition: all 0.5s;
+         & .iconsh{
+            width: 71px;
+            height: 71px;
+            background: $primary-color;
+            padding: 15px;
+            margin-right: 15px;
+            & img{
+                filter: brightness(0) invert(1);
+            }
+
+         }
+        
+         & h5{
+             font-size: 2.45rem;
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             color: $secondary-color;
+         }
+         & .btn-r-more{
+             background: $primary-color;
+             color: #fff;
+             font-family: "Rajdhani",sans-serif;
+             font-size: 1.76rem;
+             font-weight: 600;
+             padding: 0;
+             height: 50px;
+             width: 150px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+             margin: auto;
+             padding-left: 15px;
+             & span{
+                 background: $secondary-color;
+                 color: #fff;
+                 height: 50px;
+                 width: 40px;
+                 margin-left: auto;
+                 display: flex;
+                 align-items: center;
+                 & svg{
+                     width: 35px;
+                     height: 35px;
+                 }
+             }
+         }
+     }
+     & .hover-fes{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0 0 0 / 80%);
+        text-align: center;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        color: #fff;
+        padding: 30px;
+        transform: translateY(-102%);
+        transition: all 0.5s;
+        & h5{
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: "Rajdhani",sans-serif;
+        }
+        & p{
+            font-size: 1.56rem;
+            margin-top: 20px;
+        }
+        & .btn-r-more{
+            background: $primary-color;
+            width: 50px;
+            height: 50px;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            margin: auto;
+            border-radius: 50%;
+            color: #fff !important;
+        }
+     }
+     &:hover{
+        & figure{
+            & img{
+                transform: scale(1.1);
+            }
+        }
+        & .hover-fes{
+            transform: translateY(0);
+        }
+        & .text-serv{
+            transform: translateY(150px);
+        }
+    }
+    }
+ 
+}
+
+
+// why scetion home 2
+
+.whychoose-part-home-02{
+    padding: 80px 0;
+    background: $secondary-color;
+    position: relative;
+    & .container{
+        position: relative;
+        z-index: 2;
+    }
+    &:after{
+        position: absolute;
+        right: 0;
+        top:0;
+        content: "";
+        width: 480px;
+        display: inline-block;
+        background: $primary-color;
+        height: 100%;
+    }
+    & .left-part-whyu{
+        & h5{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $primary-color;
+            position: relative;
+            font-weight: 600;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            color: #fff;
+            @include comhead01;
+            & span{
+                @include comhead01;  
+            }
+        }
+        & h6{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 1.66rem;
+            font-weight: 600;
+            color: #fff;
+            width: 86%;
+        }
+        & .why-com-div{
+            width: 100%;
+            margin-bottom: 30px;
+            & figure{
+                width: 80px;
+                height: 80px;
+                background: $primary-color;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                padding: 20px;
+                border-radius: 40% 0 40% 40%;
+                
+                & img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+            & .text-why-h{
+                width: 90%;
+                padding-left: 15px;
+                & h5{
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    font-size: 2.55rem;
+                    color: #fff;
+                    &:after{
+                        display: none;
+                    }
+                }
+                & p{
+                    color: #999;
+                }
+                
+            }
+            
+        }
+    }
+    & .righty-why{
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+        overflow: hidden;
+        filter: drop-shadow(-1px 10px 18px rgba(50, 50, 0, 0.5));
+        & figcaption{
+            background: $primary-color;
+            padding: 10px;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 3rem;
+        }
+        & img{
+            @include coverimg;
+        }
+    }
+}
+
+
+// cash study design 2
+
+.cash-stuidy-home-02{
+    & .titels-cash{
+        background: $primary-color url(../images/bg-study02.png) no-repeat;
+        background-position: top left;
+        color: #fff;
+        padding:80px 0;
+        & h5{
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        & p{
+            font-size: 1.65rem;
+        }
+
+    }
+
+    & .mixitup-control-active {
+        color: $primary-color !important;
+        background: #fff !important;
+        box-shadow: 0px 14px 80px rgb(252 56 56 / 40%);
+        font-weight: 700 !important;
+    }
+    & .controls .btn {
+        font-weight: 700;
+        font-size:2rem;
+        padding: 3px 15px;
+        border-radius: 28px;
+        font-weight: 600;
+        background: none;
+        box-shadow: none;
+        font-family: "Rajdhani",sans-serif;
+        border: solid 2px #fff !important;
+        color: #fff;
+        margin: 0 10px;
+    }
+
+    & .items-work{
+        height: 400px;
+        & .img-works{
+            height: 300px;
+            width: 100%;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .work-title{
+            background: #fff;
+            width: 90% !important;
+            margin: auto !important;
+            position: relative;
+            top:-30px;
+            padding: 20px;
+            display: table;
+            & h5{
+                color: $primary-color;
+                font-size: 2.56rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
+                & span{
+                    font-weight: 600;
+                    font-family: "Rajdhani",sans-serif;
+                    font-size: 1.65rem;
+                }
+            }
+        }
+    }
+}
+
+
+// client logo
+.clients-slider{
+    margin-top: 90px;
+  & .logo-clients{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 5%);
+    margin: 30px 0;
+  }
+}
+
+
+// about home sction design 3
+
+
+
+
+.comon-miisnon{
+    & figure{
+        width: 100%;
+        height:130px;
+        & img{
+            @include coverimg;
+        }
+    }
+    & ul{
+        & li{
+            line-height: 29px;
+            & i{
+                color: $primary-color;
+            }
+        }
+    }
+}
+.com-about-right-h{
+    & .nav-tabs {
+        border-bottom: 2px solid #dee2e6;
+    }
+  & .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+   background: $primary-color;
+   color: #fff;
+  }
+  & .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+    font-family: "Rajdhani",sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+}
+
+
+// services design home 3
+
+.services-part-home-03{
+    background: $primary-color url(../images/1.png) no-repeat;
+    position: relative;
+    background-size: 100%;
+    background-position: top center;
+    margin-top: 90px;
+    padding: 80px 0;
+    & .comon-heading{
+     & h5{
+         color: #fff;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: #fff;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+         &:before{
+             width: 50px;
+             height: 4px;
+             background: #fff;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             left: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+     }
+     & h1{
+         @include comhead01;
+         color: #fff;
+         margin-top: 5px;
+     }
+     
+    }
+ 
+    & .com-items{
+     background: #fff;
+     display: grid;
+     align-content: center;
+     justify-content: center;
+     width: 100%;
+     height: 370px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+     margin: 30px 0;
+     position: relative;
+     &:after{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: $secondary-color;
+        display: inline-block;
+        content: "";
+        transform: translateY(-400px);
+        transition: all 0.5s;
+     }
+     & .img-box-serv{
+         height: 140px;
+         display: inline-block;
+         width: 100%;
+         position: relative;
+         z-index: 1;
+         & figure{
+             display: inline-block;
+             height: 140px; 
+             width: 100%;
+             & img{
+                 transform: scale(1);
+                 transition: all 0.5s;
+                 @include coverimg;
+             }
+         }
+         & .icon-serv{
+             width:100px;
+             height: 100px;
+             display: table;
+             margin: auto;
+             border-radius: 50%;
+             background:$primary-color;
+             box-shadow:4px 17px 40px rgb(0 96 255 / 65%);
+             padding: 22px;
+             & img{
+                filter: brightness(0) invert(1);
+             }
+         }
+         
+         
+     }
+     &:hover{
+     &:after{
+        transform: translateY(0);
+     }
+         & figure{
+             & img{
+                 transform: scale(1.1);
+             }
+         }
+         & .text-serv{
+            & h5{
+                color: #fff;
+             }
+         }
+         
+         & p{
+            color: #fff;
+         }
+         & .btn-r-more{
+            background: $primary-color;
+         }
+     }
+     & .text-serv{
+         padding: 0 30px;
+         position: relative;
+         z-index: 1;
+        
+         & h5{
+             font-size: 2.45rem;
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             color: $secondary-color;
+         }
+         & .btn-r-more{
+             background: $secondary-color;
+             color: #fff;
+             font-family: "Rajdhani",sans-serif;
+             font-size: 1.76rem;
+             font-weight: 600;
+             padding: 0;
+             height: 50px;
+             width: 50px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+             margin: auto;
+             border-radius: 50%;
+             & span{
+                 background: $secondary-color;
+                 color: #fff;
+                 height: 50px;
+                 width: 40px;
+                 margin-left: auto;
+                 display: flex;
+                 align-items: center;
+                 & svg{
+                     width: 35px;
+                     height: 35px;
+                 }
+             }
+         }
+     }
+    }
+ 
+ }
+
+
+// cash study design 2
+
+.cash-stuidy-home-03{
+    & .titels-cash{
+        background:$secondary-color url(../images/bg-study01.jpg) no-repeat;
+        background-position: top left;
+        color: #fff;
+        padding:80px 0;
+        & h5{
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+        }
+        & p{
+            font-size: 1.65rem;
+        }
+
+    }
+
+    & .mixitup-control-active {
+        color: $primary-color !important;
+        background: #fff !important;
+        box-shadow: 0px 14px 80px rgb(252 56 56 / 40%);
+        font-weight: 700 !important;
+    }
+    & .controls .btn {
+        font-weight: 700;
+        font-size:2rem;
+        padding: 3px 15px;
+        border-radius: 28px;
+        font-weight: 600;
+        background: none;
+        box-shadow: none;
+        font-family: "Rajdhani",sans-serif;
+        border: solid 2px #fff !important;
+        color: #fff;
+        margin: 0 10px;
+    }
+
+    & .items-work{
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        & .hover-button-divnm{
+            position: absolute;
+            top:0;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            background: #0b132bcf;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.5s;
+            & .btn{
+                & svg{
+                    color: #fff;
+                    width:40px;
+                    height: 40px;
+                }
+               
+            }
+        }
+        & .img-works{
+            height: 300px;
+            width: 100%;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .work-title{
+            background: #fff;
+            margin: auto !important;
+            width: 100%;
+            position: relative;
+            top:0;
+            padding: 20px;
+            display: table;
+            transform: translateY(0);
+            transition: all 0.5s;
+            z-index: 2;
+            & h5{
+                color: $primary-color;
+                font-size: 2.56rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
+                & span{
+                    font-weight: 600;
+                    font-family: "Rajdhani",sans-serif;
+                    font-size: 1.65rem;
+                }
+            }
+        }
+        &:hover{
+          & .work-title{
+            transform: translateY(-94px);
+          }  
+          & .hover-button-divnm{
+            opacity: 9;
+            z-index: 1;
+          }
+        }
+    }
+}
+
+
+// achivments design 2
+
+.achivemnets-02{
+    margin-top: 90px;
+    & .insj{
+        background: $primary-color;
+        padding: 30px;
+        border-radius: 10px;
+        & .comk{
+            & figure{
+               width: 50px;
+               height:50px;
+               & img{
+                filter: brightness(0) invert(1);
+               }
+            }
+            & .textr{
+                & h2{
+                    font-size: 3.45rem;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                }
+                & h5{
+                    font-size: 1.75rem;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif; 
+                }
+            }
+        }
+        
+        
+    }
+   
+}
+
+
+
+// blogs home design 2
+
+.blogs-home-02{
+    padding-top: 120px;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 8px;
+        }
+        
+    }
+    & .items-blogs{
+        height: 540px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        
+        & figure{
+            height: 270px;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .content-post{
+            padding: 10px 30px;
+            position: relative;
+            top:-45px;
+            & h5{
+                font-size: 2.45rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                margin-bottom: 13px;
+            }
+            & .admin-t{
+                margin-right: 15px;
+                font-weight: 600;
+                & i{
+                    color: $primary-color;
+                    margin-right: 5px;
+                }
+                & span{
+                    font-family: "Rajdhani",sans-serif;
+                }
+            }
+            & .btn-mre{
+                color: $primary-color;
+                font-size: 1.85rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 600;
+                & i{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    & .top-blogs-iduv{
+
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        margin-bottom: 15px;
+        justify-content: space-between;
+        & .snm-05-img{
+           width: 42px;
+           height: 42px;
+           border-radius: 50%;
+           overflow: hidden;
+           display:inline-block;
+           align-content: center;
+           margin-right: 8px;
+           & img{
+            @include coverimg;
+           }
+        }
+        & h6{
+            font-family: "Rajdhani",sans-serif;
+            text-transform: capitalize;
+            font-size: 1.65rem;
+            & i{
+                color: $primary-color;
+                font-size: 1.65rem;
+            }
+        }
+    }
+}
+
+
+
+// banner design 4
+
+
+.banner-part-02{
+    height: 580px;
+    position: relative;
+    & .carousel-indicators{
+        bottom: 50px;
+    }
+    & .carousel-item{
+        & img{
+            @include coverimg;
+        }
+    }
+    & .carousel-inner{
+      height: 580px;
+    }
+    & .carousel-caption{
+        height: 100%;
+        bottom: 0;
+        display: grid;
+        align-content: center;
+        text-align: left;
+        left: 0;
+        right: 0;
+        & h5{
+            font-family: "Shadows Into Light",cursive;
+            font-size: 3rem;
+            color: #fff;
+            text-transform: capitalize;
+        }
+        & h1{
+            font-size: 5rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.05;
+            color: #fff;
+            & span{
+                font-size: 5rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+            }
+        }
+        & p{
+            font-size: 1.65rem;
+        }
+        & .btn-more{
+            background: $primary-color;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            font-weight:600;
+            text-transform: uppercase;
+            font-size: 2rem;
+            width: 170px;
+        }
+    
+    }
+   
+}
+
+
+// about design home 4
+.top-sectionsj{
+    margin-top: 90px;
+    & .insjfg{
+        background: $primary-color;
+        border-radius: 15px;
+        padding: 30px;
+    }
+    & .row{
+        & .comon-feature-new{
+            border-right: solid 1px #5281f7;
+        }
+
+        & > div:last-child{
+            & .comon-feature-new{
+                border-right:none;
+            }
+        }
+    }
+}
+.comon-feature-new{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    padding: 30px 30px 14px;
+    & figure{
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        display: table;
+        margin-bottom: 0px;
+        overflow: hidden;
+        & img{
+            filter: brightness(0) invert(1);
+        }
+        
+    }
+    & h5{
+        font-family: "Rajdhani",sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+        margin-top: 15px;
+    }
+    & p{
+        color: #fff;
+        margin-top: 8px;
+        font-size: 1.35rem;
+        
+    }
+}
+
+// services design home 4
+
+.services-part-home-04{
+    background:#f9f9f9 url(../images/bg-dots2.png) no-repeat;
+    position: relative;
+    background-size: 100%;
+    background-position: top center;
+    margin-top: 90px;
+    padding: 80px 0;
+    & .comon-heading{
+     & h5{
+         color: $primary-color;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: $primary-color;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+         &:before{
+             width: 50px;
+             height: 4px;
+             background: $primary-color;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             left: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+     }
+     & h1{
+         @include comhead01;
+         color: $secondary-color;
+         margin-top: 5px;
+     }
+     
+    }
+ 
+    & .com-items{
+     background: #fff;
+     display: grid;
+     align-content: center;
+     justify-content: center;
+     width: 100%;
+     height: 370px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+     margin: 30px 0;
+     position: relative;
+     &:after{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: $primary-color;
+        display: inline-block;
+        content: "";
+        transform: translateY(-400px);
+        transition: all 0.5s;
+     }
+     & .img-box-serv{
+         height: 140px;
+         display: inline-block;
+         width: 100%;
+         position: relative;
+         z-index: 1;
+         & figure{
+             display: inline-block;
+             height: 140px; 
+             width: 100%;
+             & img{
+                 transform: scale(1);
+                 transition: all 0.5s;
+                 @include coverimg;
+             }
+         }
+         & .icon-serv{
+             width:100px;
+             height: 100px;
+             display: table;
+             margin: auto;
+             border-radius: 50%;
+             background:$primary-color;
+             box-shadow:4px 17px 40px rgb(0 96 255 / 65%);
+             padding: 22px;
+             & img{
+                filter: brightness(0) invert(1);
+             }
+         }
+         
+         
+     }
+     &:hover{
+        & .icon-serv{
+            background: #fff;
+            & img{
+                filter: brightness(1);
+            }
+        }
+     &:after{
+        transform: translateY(0);
+       
+     }
+         & figure{
+             & img{
+                 transform: scale(1.1);
+             }
+         }
+         & .text-serv{
+            & .icon-serv{
+                background: $secondary-color;
+            }
+            & h5{
+                color: #fff;
+             }
+         }
+         
+         & p{
+            color: #fff;
+         }
+         & .btn-r-more{
+            background: $primary-color;
+         }
+     }
+     & .text-serv{
+         padding: 0 30px;
+         position: relative;
+         z-index: 1;
+        
+         & h5{
+             font-size: 2.45rem;
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             color: $secondary-color;
+         }
+         & .btn-r-more{
+             background: $secondary-color;
+             color: #fff;
+             font-family: "Rajdhani",sans-serif;
+             font-size: 1.76rem;
+             font-weight: 600;
+             padding: 0;
+             height: 50px;
+             width: 50px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+             margin: auto;
+             border-radius: 50%;
+             & span{
+                 background: $secondary-color;
+                 color: #fff;
+                 height: 50px;
+                 width: 40px;
+                 margin-left: auto;
+                 display: flex;
+                 align-items: center;
+                 & svg{
+                     width: 35px;
+                     height: 35px;
+                 }
+             }
+         }
+     }
+    }
+ 
+ }
+
+
+
+
+// cash study design 4
+
+.cash-stuidy-home-04{
+    & .titels-cash{
+        background:#fff;
+        padding:80px 0;
+        & h5{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $primary-color;
+            font-family: "Rajdhani",sans-serif;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+          
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $secondary-color;
+        }
+        & p{
+            font-size: 1.65rem;
+        }
+
+    }
+
+    & .sell-sbtn{
+        background: $primary-color;
+        color: #fff;
+        font-family: "Rajdhani",sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        width: 220px;
+        box-shadow: 4px 17px 40px rgb(0 96 255 / 65%);
+        height: 50px;
+        line-height: 40px;
+    }
+
+    & .items-work{
+        height: 400px;
+        position: relative;
+        box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 12%);
+        margin-top: 30px;
+        margin-bottom: 30px;
+        & .hover-button-divnm{
+            position: absolute;
+            top:0;
+            height:305px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            background: #0b132bcf;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.5s;
+            & .btn{
+                & svg{
+                    color: #fff;
+                    width:40px;
+                    height: 40px;
+                }
+               
+            }
+        }
+        & .img-works{
+            height: 305px;
+            width: 100%;
+            position: relative;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .work-title{
+            background: #fff;
+            margin: auto !important;
+            width: 100%;
+            position: relative;
+            padding: 20px;
+            display: table;
+            transform: translateY(0);
+            transition: all 0.5s;
+            z-index: 2;
+            & h5{
+                color: $secondary-color;
+                font-size: 2.56rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                & span{
+                    color: $primary-color;
+                }
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
+                & span{
+                    font-weight: 600;
+                    font-family: "Rajdhani",sans-serif;
+                    font-size: 1.65rem;
+                }
+            }
+        }
+        &:hover{
+     
+          & .hover-button-divnm{
+            opacity: 9;
+            z-index: 1;
+          }
+        }
+    }
+}
+
+
+
+
+// how it work design 1
+
+.howit-work-home-02{
+    padding: 80px 0;
+    background:#001659 url(../images/map.64d3dbc2e5120598223b.png) no-repeat;
+    background-position: top center;
+    height: 560px;
+    & .comon-heading{
+        & h5{
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: #fff;
+            margin-top: 5px;
+        }
+        
+    }
+    & .comon-items-stp{
+        display: inline-block;
+        width: 100%;
+        border-radius: 10px;
+        height: 220px;
+        background: #fff;
+        transform: scale(1);
+        transition: all 0.5s;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 15%);
+        & .img-sty-box{
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            height: 30px;
+            & .no01{
+                position: absolute;
+                width: 80px;
+                height:80px;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                background: $primary-color;
+                color: #fff;
+                border: solid 8px #5281f7;
+                border-radius: 50%;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                font-size: 2rem;
+                z-index: 2;
+                margin: auto;
+            }
+            & figure{
+                width: 180px;
+                height: 180px;
+                margin:0 auto !important;
+                border-radius: 50%;
+                background: #fff;
+                position: relative;
+                margin: 0 auto;
+                &::before{
+                    position: absolute;
+                    width: 210px;
+                    height: 210px;
+                    /* background: #fff; */
+                    border-radius: 50%;
+                    border: dashed 1px #bbb;
+                    content: "";
+                    left: -15px;
+                    right: 0;
+                    margin: auto;
+                    top: -15px;
+                    z-index: 1;
+                }
+                & img{
+                    @include coverimg;
+                    border-radius: 50%;
+                    
+                }
+            }
+        }
+        & .st-names{
+            margin-top:20px;
+            padding: 0 20px;
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 2.56rem;
+                color: $secondary-color;
+                font-weight: 700;
+                margin-bottom: 8px;
+                text-transform: capitalize;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    
+}
+
+
+
+// achivments design 3
+
+.achivemnets-03{
+    margin-bottom: 60px;
+    & .insj{
+        & .comk{
+            & figure{
+               width: 50px;
+               height:50px;
+               & img{
+                filter: brightness(0) invert(1);
+               }
+            }
+            & .textr{
+                & h2{
+                    font-size: 3.45rem;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                }
+                & h5{
+                    font-size: 1.75rem;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif; 
+                }
+            }
+        }
+        
+        
+    }
+   
+}
+
+
+
+// team design 2
+.team-part-home-02{
+    background: #fff;
+    padding:100px 0;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 5px;
+        }
+        
+    }
+    & .tema-items{
+        height:360px;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        margin-top: 30px;
+        margin-bottom: 30px;
+        
+        & .tema-details{
+            text-align: center;
+            position: relative;
+            padding-top: 18px;
+            & h5{
+                font-size: 2rem;
+                font-family: "Rajdhani",sans-serif;
+                text-transform: uppercase;
+                position: relative;
+                & span{
+                    font-size: 1.56rem;
+                    color: $primary-color;
+                    margin-top: 5px;
+                }
+            }
+        }
+        & .img-box-team01{
+            height:270px;
+            overflow: hidden;
+            position: relative;
+            & .hover-team{
+                position: absolute;
+                height: 100%;
+                display: grid;
+                z-index: 2;
+                top: 0;
+                padding: 0 29px;
+                background: rgba(0,0,0,70%);
+                left: 0;
+                right: 0;
+                opacity: 0;
+                transition: all 0.5s;
+
+            }
+            & .user-pic{
+                @include coverimg;
+            }
+        }
+        & .soc-t{
+            background: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: grid;
+            padding: 10px;
+            margin: 0 5px;
+            
+            & figure{
+                text-align: center;
+                margin:0 auto !important;
+                width: 88%;
+                & img{
+                    transform: scale(1);
+                    transition: all 0.5s;
+                }
+            }
+        }
+        &:hover{
+            & .hover-team{
+                opacity: 9;
+            }
+            & .soc-t{
+                & figure{
+                    & img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+// testimoials design 2
+
+.tetimonals-work-home-02{
+    background: url(../images/vdeo-bg.jpg) no-repeat;
+    background-size: cover;
+ 
+    & .comon-heading{
+        text-align: center;
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            color: #fff;
+            text-transform: capitalize;
+            @include comhead01;
+            & span{
+                color: #fff;
+                @include comhead01; 
+            }
+        }
+    }
+    & .dveo-text{
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        & h1{
+            color: #fff;
+            @include comhead01;
+            & span{
+                color: #fff;
+                @include comhead01; 
+            }
+        }
+        & p{
+            color: #fff;
+            font-size: 1.65rem;
+        }
+        & .btn-more{
+            background: $primary-color;
+            width: 150px;
+            font-size: 1.65rem;
+            font-family: "Rajdhani",sans-serif;
+            height: 45px;
+            line-height: 34px;
+            font-weight: 600;
+            color: #fff;
+            
+        }
+        & .btn-play01{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            color: $primary-color;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            -webkit-animation: murad 1s linear infinite;
+            animation: murad 1.5s linear infinite;
+            -webkit-transition: .5s;
+            font-size: 3rem;
+            z-index: 1;
+            padding-left: 20px;
+
+                }
+    }
+    & .slider-tesr{
+        position: relative;
+        top:50px;
+        & .tems-slider01{
+            padding: 30px;
+            border-radius:8px;
+            height:auto;
+            box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+            margin-top:30px;
+            margin-bottom: 30px;
+            & .img-userpic{
+                height: 143px;
+                position: relative;
+                width: 20%;
+                margin: auto;
+                & figure{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+                    & img{
+                        @include coverimg;
+
+                    }
+                }
+                & .quite{
+                    background: $primary-color;
+                    width:45px;
+                    height: 45px;
+                    color: #fff;
+                    display: grid;
+                    align-content: center;
+                    justify-content: center;
+                    position: absolute;
+                    right: 40px;
+                    bottom:19px;
+                    border-radius: 50%;
+                }
+            }
+            & .para-details{
+                width: 70%;
+                margin: auto;
+                & p{
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif;
+                }
+                & h5{
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                    margin-top: 15px;
+                    font-size: 2rem;
+                    color: #fff;
+                    & span{
+                        color: $primary-color;
+                        font-family: "Rajdhani",sans-serif;
+                        font-size: 1.45rem;
+                        margin-top: 5px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+
+// how it work design 3
+
+.howit-work-home-03{
+    padding: 40px 0;
+    background: url(../images/1-st.webp) no-repeat;
+    background-position: center center;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 5px;
+        }
+        
+    }
+    & .comon-items-stp{
+        display: inline-block;
+        width: 100%;
+        height: 350px;
+        transform: scale(1);
+        transition: all 0.5s;
+        & .img-sty-box{
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            height: 180px;
+            & .no01{
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                background: $primary-color;
+                color: #fff;
+                border-radius: 50%;
+                bottom:61px;
+                left: 30px;
+                font-size: 2rem;
+                z-index: 2;
+            }
+            & figure{
+                width: 120px;
+                height: 120px;
+                margin:0 auto !important;
+                border-radius: 50%;
+                background: $secondary-color;
+                position: relative;
+                padding: 30px;
+                top:20px;
+                & img{
+                    filter: brightness(0 ) invert(1);
+                }
+                &::before{
+                    position: absolute;
+                    width: 151px;
+                    height: 151px;
+                    /* background: #fff; */
+                    border-radius: 50%;
+                    border: dashed 1px #bbb;
+                    content: "";
+                    left: -15px;
+                    right: 0;
+                    margin: auto;
+                    top: -15px;
+                    z-index: 1;
+                }
+                
+            }
+        }
+        & .st-names{
+            margin-top: 0;
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 2.56rem;
+                color: $secondary-color;
+                font-weight: 700;
+                margin-bottom: 8px;
+                text-transform: capitalize;
+            }
+        }
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    
+}
+
+.achivemnets-03{
+    background: #001659 url(../images/map.64d3dbc2e5120598223b.png) no-repeat;
+    background-repeat: no-repeat;
+    padding:90px 0;
+    & .insj{
+        & .comk{
+            & figure{
+               width: 50px;
+               height:50px;
+               & img{
+                filter: brightness(0) invert(1);
+               }
+            }
+            & .textr{
+                & h2{
+                    font-size: 3.45rem;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                }
+                & h5{
+                    font-size: 1.75rem;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif; 
+                }
+            }
+        }
+        
+        
+    }
+   
+}
+
+
+.new-ui-banner{
+    & .carousel-indicators [data-bs-target]{
+        background: $primary-color;
+        height: 7px;
+        width: 55px;
+        border-radius: 5px;
+        border: none !important;
+    }
+    & .carousel-indicators .active{
+        opacity: 9 !important;
+        background: #fff !important;
+    }
+}
+
+
+
+
+// banner design 5
+
+
+.banner-part-05{
+    height: 580px;
+    position: relative;
+    & .carousel-indicators{
+        bottom: 50px;
+    }
+    & .carousel-item{
+        & img{
+            @include coverimg;
+        }
+    }
+    & .carousel-inner{
+      height: 580px;
+    }
+    & .carousel-caption{
+        height: 100%;
+        bottom: 0;
+        display: grid;
+        align-content: center;
+        text-align: left;
+        left: 0;
+        right: 0;
+        & h5{
+            font-family: "Shadows Into Light",cursive;
+            font-size: 3rem;
+            color: $primary-color;
+            text-transform: capitalize;
+        }
+        & h1{
+            font-size: 5rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.05;
+            color: $secondary-color;
+            & span{
+                font-size: 5rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+            }
+        }
+        & p{
+            font-size: 1.65rem;
+            color: $secondary-color;
+        }
+        & .btn-more{
+            background: $primary-color;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            font-weight:600;
+            text-transform: uppercase;
+            font-size: 2rem;
+            width: 170px;
+        }
+    
+    }
+   
+}
+
+
+
+// feature design home 4
+
+.sm01-01-2{
+    width: 60%;
+    height: 210px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    border: solid 17px #fff;
+    box-shadow: rgb(0 0 0 / 12%);
+}
+.top-sectionsj-02{
+    margin-top:-110px;
+    position: relative;
+    top:0;
+    & .insjfg{
+    }
+
+
+    & .comon-feature-new{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height:250px;
+        padding: 30px 30px 14px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        background: #fff;
+        border-bottom: solid 4px $primary-color;
+        & figure{
+            width: 45px;
+            margin: 0;
+            display: table;
+            margin-bottom: 0px;
+            overflow: hidden;
+            & img{
+                filter: brightness(1);
+                
+            }
+            
+        }
+        & h5{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: $secondary-color;
+            margin-top: 15px;
+        }
+        & p{
+            color: $secondary-color;
+            margin-top: 8px;
+            font-size: 1.35rem;
+            
+        }
+    }
+}
+.new-services-part-01{
+    background: #f5f5f5;
+    margin-top: 50px;
+    padding: 70px 0;
+    & .comon-sert{
+        width: 100%;
+        & h4{
+            color: $primary-color;
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 2.56rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            &:after{
+                width: 30px;
+                height: 2px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                right: 0;
+                top:0;
+                display: inline-block;
+                margin-left: 5px;
+            }
+        }
+        & .right-st-text{
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                font-size: 2.56rem;
+                color: $secondary-color;
+                margin-bottom: 8px;
+            }
+            & ul{
+                margin-top: 8px;
+                & li{
+                    line-height: 30px;
+                   & a{
+                    display: inline-block;
+                    width: 100%;
+                    position: relative;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 600;
+                    color: $secondary-color;
+                    display: flex;
+                    font-size: 1.65rem;
+                    &::before{
+                        content: "\f105";
+                        position: relative;
+                        left: 0;
+                        display: inline-block;
+                        font-family: "FontAwesome";
+                        margin-right: 5px;
+                        color: $primary-color;
+                    }
+                   }
+                }
+            }
+        }
+    }
+}
+
+
+// services design home 5
+
+.services-part-home-05{
+    & .comon-heading{
+        & h1{
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #0b132b;
+            margin-top: 5px;
+        }
+        & h5{
+            color: #0060ff;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+           
+        
+        }
+    }
+    padding: 80px 0;
+    & .righy0{
+        width: 100%;
+        height: 500px;
+        & img{
+            @include coverimg;
+        }
+    }
+    & .rioght-dibn{
+        & h2{
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: "Rajdhani",sans-serif;
+            color: $secondary-color;
+        }
+        & ul{
+            & li{
+                display: flex;
+                align-items: center;
+                font-family: "Rajdhani",sans-serif;
+                color: $secondary-color;
+                font-weight: 700;
+                line-height: 30px;
+                font-size: 1.65rem;
+                &::before{
+                    content: "\f105";
+                    position: relative;
+                    left: 0;
+                    display: inline-block;
+                    font-family: "FontAwesome";
+                    margin-right: 5px;
+                    color: $primary-color;
+                }
+            }
+        }
+        & .red-btn{
+            background: $primary-color;
+            color: #fff;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+        }
+    }
+    & .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+        background: $secondary-color;
+        & .comon-dert{
+            border-color: $secondary-color;
+            & .text-h{
+                color: #fff;
+            }
+            & img{
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    & .nav-link{
+        border-radius: 0;
+        overflow: hidden;
+    }
+    & li.nav-item {
+        width: 20%;
+        display: inline-block;
+        margin: 0 15px;
+        
+        & .comon-dert{
+            display: inline-block;
+            width: 100%;
+            border: solid 2px $secondary-color;
+            padding: 20px;
+            & .text-h{
+                font-size: 2rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                margin-top: 12px;
+                display: table;
+                text-align: center;
+                margin: auto;
+                color: $secondary-color;
+            }
+            & span{
+                & img{
+                    width: 23%;
+                    margin: auto;
+                }
+            }
+        }
+    }
+   
+}
+
+
+
+
+// blogs home design 3
+
+.blogs-home-03{
+    padding-top: 120px;
+    & .sm-post{
+        margin-bottom: 15px;
+        width: 100%;
+        & figure{
+            width: 90px;
+            height: 70px;
+            overflow: hidden;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .right-pous{
+            padding-left: 15px;
+            & h5{
+                font-size: 1.65rem;
+                margin-bottom: 10px;
+            }
+            & p{
+                color: #424242;
+                & i{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+    & .btn-more{
+        background: #0060ff;
+        color: #fff;
+        font-family: "Rajdhani",sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+        width: 220px;
+        box-shadow: 4px 17px 40px rgb(0 96 255 / 65%);
+        height: 50px;
+        line-height: 40px;
+    }
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+               display: none;
+            }
+        }
+        & h1{
+            @include comhead01;
+            color: $secondary-color;
+            margin-top: 8px;
+        }
+        
+    }
+    & .items-blogs{
+        height: 540px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        
+        & figure{
+            height: 270px;
+            position: relative;
+            & figcaption{
+                position: absolute;
+                width: 86px;
+                height: 86px;
+                background: #0060ff;
+                color: #fff;
+                bottom: 0;
+                left: 0;
+                border-radius: 0 50px 0 0;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                font-size: 1.65rem;
+                text-align: center;
+            }
+            & img{
+                @include coverimg;
+            }
+        }
+        & .content-post{
+            padding: 10px 30px;
+            position: relative;
+            top:0;
+            & h6{
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                font-size: 1.45rem;
+                font-weight: 600;
+                & b{
+                    color: $primary-color;
+                }
+            }
+            & h5{
+                font-size: 2.45rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                margin-bottom: 13px;
+            }
+            & .admin-t{
+                margin-right: 15px;
+                font-weight: 600;
+                & i{
+                    color: $primary-color;
+                    margin-right: 5px;
+                }
+                & span{
+                    font-family: "Rajdhani",sans-serif;
+                }
+            }
+            & .btn-mre{
+                color: $primary-color;
+                font-size: 1.85rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 600;
+                & i{
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+    & .top-blogs-iduv{
+
+        background: #fff;
+        padding: 10px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        margin-bottom: 15px;
+        justify-content: space-between;
+        & .snm-05-img{
+           width: 42px;
+           height: 42px;
+           border-radius: 50%;
+           overflow: hidden;
+           display: grid;
+           align-content: center;
+           margin-right: 8px;
+        }
+        & h6{
+            font-family: "Rajdhani",sans-serif;
+            text-transform: capitalize;
+            font-size: 1.65rem;
+            & i{
+                color: $primary-color;
+                font-size: 1.65rem;
+            }
+        }
+    }
+}
+
+
+
+// achivments design 4
+
+.achivemnets-04{
+    background-repeat: no-repeat;
+    padding:30px 0 90px 0;
+    & .insj{
+        & .comk{
+            & figure{
+               width: 50px;
+               height:50px;
+               
+            }
+            & .textr{
+                & h2{
+                    font-size: 3.45rem;
+                    color: $primary-color;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                }
+                & h5{
+                    font-size: 1.75rem;
+                    color: $secondary-color;
+                    font-family: "Rajdhani",sans-serif; 
+                }
+            }
+        }
+        
+        
+    }
+   
+}
+
+
+// testimoials design 6
+
+.tetimonals-work-home-06{
+    background: url(../images/vdeo-bg.jpg) no-repeat;
+    padding: 80px 0;
+    background-size: cover;
+ 
+    & .comon-heading{
+        text-align: center;
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            color: #fff;
+            text-transform: capitalize;
+            @include comhead01;
+            & span{
+                color: #fff;
+                @include comhead01; 
+            }
+        }
+    }
+    & .dveo-text{
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        & h1{
+            color: #fff;
+            @include comhead01;
+            & span{
+                color: #fff;
+                @include comhead01; 
+            }
+        }
+        & p{
+            color: #fff;
+            font-size: 1.65rem;
+        }
+        & .btn-more{
+            background: $primary-color;
+            width: 150px;
+            font-size: 1.65rem;
+            font-family: "Rajdhani",sans-serif;
+            height: 45px;
+            line-height: 34px;
+            font-weight: 600;
+            color: #fff;
+            
+        }
+        & .btn-play01{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            color: $primary-color;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            -webkit-animation: murad 1s linear infinite;
+            animation: murad 1.5s linear infinite;
+            -webkit-transition: .5s;
+            font-size: 3rem;
+            z-index: 1;
+            padding-left: 20px;
+
+                }
+    }
+    & .slider-tesr{
+        position: relative;
+        & .tems-slider01{
+            padding: 30px;
+            border-radius:8px;
+            height:auto;
+            box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+            margin-top:30px;
+            margin-bottom: 30px;
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                margin-top: 15px;
+                font-size: 2rem;
+                color: #fff;
+                & span{
+                    color: $primary-color;
+                    font-family: "Rajdhani",sans-serif;
+                    font-size: 1.45rem;
+                    margin-top: 5px;
+                    font-weight: 600;
+                }
+            }
+
+            & .img-userpic{
+                position: relative;
+                width: 20%;
+                & figure{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+                    & img{
+                        @include coverimg;
+
+                    }
+                }
+                & .quite{
+                    background: $primary-color;
+                    width:45px;
+                    height: 45px;
+                    color: #fff;
+                    display: grid;
+                    align-content: center;
+                    justify-content: center;
+                    position: absolute;
+                    right: 40px;
+                    bottom:-20px;
+                    border-radius: 50%;
+                }
+            }
+            & .para-details{
+                width: 100%;
+                margin: auto;
+                border: solid 1px #fff;
+                padding: 20px;
+                & p{
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: #fff;
+                    font-family: "Rajdhani",sans-serif;
+                }
+               
+            }
+        }
+    }
+    
+}
+
+// about line new 1
+
+.new-uliner-line{
+    & h1{
+        & span{
+            position: relative;
+            &:after{
+                background: url(../images/10.webp) no-repeat;
+                position:absolute;
+                content: "";
+                display: inline-block;
+                width: 230px;
+                height: 43px;
+                right: 100px;
+                bottom: -28px;
+                float: right;
+            }
+        }
+    }
+}
+
+
+
+
+// feature design home 5
+
+.sm01-01-2{
+    width: 60%;
+    height: 210px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    border: solid 17px #fff;
+    box-shadow: rgb(0, 0 , 0 , 12%);
+}
+.top-sectionsj-02{
+    margin-top:-110px;
+    position: relative;
+    top:0;
+    & .insjfg{
+        & .comon-feature-new{
+            border: none !important;
+            box-shadow: 0px 0px 50px 0px rgb(0 0 0 / 34%);
+        }
+        & .row{
+            & > div:nth-child(2){
+                & .comon-feature-new{
+                    background: $primary-color;
+                    box-shadow:inset #0052db -19px 2px 13px;
+                    & h5{
+                        color: #fff;
+                    }
+                    & p{
+                        color: #fff;
+                    }
+                    & figure{
+                        & img{
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+
+            & > div:nth-child(4){
+                & .comon-feature-new{
+                    background: $secondary-color;
+                    box-shadow:inset #0e1324 -19px 2px 13px;
+                    & h5{
+                        color: #fff;
+                    }
+                    & p{
+                        color: #fff;
+                    }
+                    & figure{
+                        & img{
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    & .comon-feature-new{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        height:250px;
+        padding: 30px 30px 14px;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        background: #fff;
+        & figure{
+            width: 45px;
+            margin: 0;
+            display: table;
+            margin-bottom: 0px;
+            overflow: hidden;
+            & img{
+                filter: brightness(1);
+                
+            }
+            
+        }
+        & h5{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: $secondary-color;
+            margin-top: 15px;
+        }
+        & p{
+            color: $secondary-color;
+            margin-top: 8px;
+            font-size: 1.35rem;
+            
+        }
+    }
+}
+.new-services-part-01{
+    background: #f5f5f5;
+    margin-top: 50px;
+    padding: 70px 0;
+    & .comon-sert{
+        width: 100%;
+        & h4{
+            color: $primary-color;
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 2.56rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            &:after{
+                width: 30px;
+                height: 2px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                right: 0;
+                top:0;
+                display: inline-block;
+                margin-left: 5px;
+            }
+        }
+        & .right-st-text{
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                font-size: 2.56rem;
+                color: $secondary-color;
+                margin-bottom: 8px;
+            }
+            & ul{
+                margin-top: 8px;
+                & li{
+                    line-height: 30px;
+                   & a{
+                    display: inline-block;
+                    width: 100%;
+                    position: relative;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 600;
+                    color: $secondary-color;
+                    display: flex;
+                    font-size: 1.65rem;
+                    &::before{
+                        content: "\f105";
+                        position: relative;
+                        left: 0;
+                        display: inline-block;
+                        font-family: "FontAwesome";
+                        margin-right: 5px;
+                        color: $primary-color;
+                    }
+                   }
+                }
+            }
+        }
+    }
+}
+
+
+
+// services design home 3
+
+.services-part-home-07{
+    background: #001659 url(../images/map.64d3dbc2e5120598223b.png) no-repeat;
+    position: relative;
+    background-size: 100%;
+    background-position: top center;
+    margin-top: 90px;
+    padding: 80px 0;
+    & .comon-heading{
+     & h5{
+         color: #fff;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: #fff;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+         &:before{
+             width: 50px;
+             height: 4px;
+             background: #fff;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             left: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+     }
+     & h1{
+         @include comhead01;
+         color: #fff;
+         margin-top: 5px;
+     }
+     
+    }
+ 
+    & .com-items{
+     border: solid 2px $primary-color;
+     display: grid;
+     align-content: center;
+     justify-content: center;
+     width: 100%;
+     height: 370px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+     margin: 30px 0;
+     position: relative;
+    
+     & p{
+        color: #fff;
+     }
+     &:after{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: $secondary-color;
+        display: inline-block;
+        content: "";
+        transform: translateY(-400px);
+        transition: all 0.5s;
+     }
+     & .img-box-serv{
+         height: 140px;
+         display: inline-block;
+         width: 100%;
+         position: relative;
+         z-index: 1;
+         & figure{
+             display: inline-block;
+             height: 140px; 
+             width: 100%;
+             & img{
+                 transform: scale(1);
+                 transition: all 0.5s;
+                 @include coverimg;
+             }
+         }
+         & .icon-serv{
+             width:100px;
+             height: 100px;
+             display: table;
+             margin: auto;
+             border-radius: 50%;
+             background:$primary-color;
+             box-shadow:4px 17px 40px rgb(0 96 255 / 65%);
+             padding: 22px;
+             & img{
+                filter: brightness(0) invert(1);
+             }
+         }
+         
+         
+     }
+     &:hover{
+        border: solid 2px $secondary-color;
+     &:after{
+        transform: translateY(0);
+     }
+         & figure{
+             & img{
+                 transform: scale(1.1);
+             }
+         }
+         & .text-serv{
+            & h5{
+                color: #fff;
+             }
+         }
+         
+         & p{
+            color: #fff;
+         }
+         & .btn-r-more{
+            background: $primary-color;
+         }
+     }
+     & .text-serv{
+         padding: 0 30px;
+         position: relative;
+         z-index: 1;
+        
+         & h5{
+             font-size: 2.45rem;
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             color: #fff;
+         }
+         & .btn-r-more{
+             background: #fff;
+             color: $secondary-color;
+             font-family: "Rajdhani",sans-serif;
+             font-size: 1.76rem;
+             font-weight: 600;
+             padding: 0;
+             height: 50px;
+             width: 50px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+             margin: auto;
+             border-radius: 50%;
+             & span{
+                 background: #fff;
+                 color: $secondary-color;
+                 height: 50px;
+                 width: 40px;
+                 margin-left: auto;
+                 display: flex;
+                 align-items: center;
+                 & svg{
+                     width: 35px;
+                     height: 35px;
+                 }
+             }
+         }
+     }
+    }
+ 
+ }
+
+// cash study design 7
+
+.cash-stuidy-home-07{
+    & .titels-cash{
+        background:#fff;
+        color: #fff;
+        padding:80px 0;
+        & h5{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $primary-color;
+            font-family: "Rajdhani",sans-serif;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $secondary-color;
+        }
+        & p{
+            font-size: 1.65rem;
+        }
+
+    }
+
+    & .mixitup-control-active {
+        color: #fff !important;
+        background: $primary-color !important;
+        box-shadow: 0px 14px 80px rgb(252 56 56 / 40%);
+        font-weight: 700 !important;
+    }
+    & .controls .btn {
+        font-weight: 700;
+        font-size:2rem;
+        padding: 3px 15px;
+        border-radius: 28px;
+        font-weight: 600;
+        background: none;
+        box-shadow: none;
+        font-family: "Rajdhani",sans-serif;
+        border: solid 2px $primary-color !important;
+        color: $primary-color;
+        margin: 0 10px;
+    }
+
+    & .items-work{
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        & .hover-button-divnm{
+            position: absolute;
+            top:0;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            background: #0b132bcf;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.5s;
+            & .btn{
+                & svg{
+                    color: #fff;
+                    width:40px;
+                    height: 40px;
+                }
+               
+            }
+        }
+        & .img-works{
+            height: 300px;
+            width: 100%;
+            & img{
+                @include coverimg;
+            }
+        }
+        & .work-title{
+            background: #fff;
+            margin: auto !important;
+            width: 100%;
+            position: relative;
+            top:0;
+            padding: 20px;
+            display: table;
+            transform: translateY(0);
+            transition: all 0.5s;
+            z-index: 2;
+            & h5{
+                color: $primary-color;
+                font-size: 2.56rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
+                & span{
+                    font-weight: 600;
+                    font-family: "Rajdhani",sans-serif;
+                    font-size: 1.65rem;
+                }
+            }
+        }
+        &:hover{
+          & .work-title{
+            transform: translateY(-94px);
+          }  
+          & .hover-button-divnm{
+            opacity: 9;
+            z-index: 1;
+          }
+        }
+    }
+}
+
+
+// testimoials design 1
+
+.tetimonals-work-home-07{
+    & .inside-texr{
+        background: #fff;
+        box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+        & .righty01{
+            width: 100%;
+            height: 390px;
+            & img{
+                @include coverimg;
+            }
+        }
+    }
+    & .video-sections{
+        position: relative;
+        & .img-videom{
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            top:0;
+            height: 680px;
+            & img{
+                @include coverimg;
+            }
+        }
+    }
+    & .dveo-text{
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        & h1{
+            color: #fff;
+            @include comhead01;
+            & span{
+                color: #fff;
+                @include comhead01; 
+            }
+        }
+        & p{
+            color: #fff;
+            font-size: 1.65rem;
+        }
+        & .btn-more{
+            background: $primary-color;
+            width: 150px;
+            font-size: 1.65rem;
+            font-family: "Rajdhani",sans-serif;
+            height: 45px;
+            line-height: 34px;
+            font-weight: 600;
+            color: #fff;
+            
+        }
+        & .btn-play01{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            color: $primary-color;
+            background: #fff;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            -webkit-animation: murad 1s linear infinite;
+            animation: murad 1.5s linear infinite;
+            -webkit-transition: .5s;
+            font-size: 3rem;
+            z-index: 1;
+            padding-left: 20px;
+
+                }
+    }
+    & .slider-tesr{
+        position: relative;
+        top:50px;
+        & .tems-slider01{
+            background: #fff;
+            padding: 30px;
+            border-radius:8px;
+            height: 350px;
+            & .img-userpic{
+                height: 143px;
+                position: relative;
+                width: 43%;
+                margin: auto;
+                & figure{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+                    & img{
+                        @include coverimg;
+
+                    }
+                }
+                & .quite{
+                    background: $primary-color;
+                    width:45px;
+                    height: 45px;
+                    color: #fff;
+                    display: grid;
+                    align-content: center;
+                    justify-content: center;
+                    position: absolute;
+                    right: 40px;
+                    bottom:19px;
+                    border-radius: 50%;
+                }
+            }
+            & .para-details{
+                & h5{
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                    margin-top: 15px;
+                    font-size: 2rem;
+                    & span{
+                        color: $primary-color;
+                        font-family: "Rajdhani",sans-serif;
+                        font-size: 1.45rem;
+                        margin-top: 5px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+//  add section design 1 home
+
+.add-section-home-01{
+    background: #001659;
+    height: 280px;
+    position: relative;
+    margin-top: 80px;
+    display: grid !important;
+    align-content: center;
+
+    & h1{
+        color: #fff;
+        font-family: "Rajdhani",sans-serif;
+        font-weight: 700;
+        font-size: 4rem;
+    }
+    & p{
+        color: #fff;
+        font-size: 1.65rem;
+    }
+    & .conta-btn{
+        background: $primary-color;
+        color: #fff;
+        font-family: "Rajdhani",sans-serif;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    & .container{
+        & .righyu01{
+            position: absolute;
+            right: 15%;
+            bottom: 0;
+            width: 22%;
+        }
+    }
+}
+
+
+
+// services design home 8
+
+.services-part-home-08{
+    position: relative;
+    background-size: 100%;
+    margin-top: 0;
+    padding: 80px 0;
+    & .comon-heading{
+     & h5{
+         color: $primary-color;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: $primary-color;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+         &:before{
+             width: 50px;
+             height: 4px;
+             background: $primary-color;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             left: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+     }
+     & h1{
+         @include comhead01;
+         color: $secondary-color;
+         margin-top: 5px;
+     }
+     
+    }
+ 
+    & .com-items{
+     background: #fff;
+     display: inline-block;
+     width: 100%;
+     height: 540px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+     margin: 30px 0;
+     & .img-box-serv{
+         height: 340px;
+         display: inline-block;
+         width: 100%;
+         position: relative;
+         & figure{
+             display: inline-block;
+             height: 300px; 
+             width: 100%;
+             & img{
+                 transform: scale(1);
+                 transition: all 0.5s;
+                 @include coverimg;
+             }
+         }
+         & .icon-serv{
+             width:80px;
+             height: 80px;
+             display: table;
+             margin: auto;
+             border-radius: 50%;
+             background: #fff;
+             box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 14%);
+             position: absolute;
+             left: 0;
+             right: 0;
+             bottom: 7px;
+             padding: 22px;
+         }
+         
+         
+     }
+     &:hover{
+         & figure{
+             & img{
+                 transform: scale(1.1);
+             }
+         }
+     }
+     & .text-serv{
+         padding: 0 30px;
+        
+         & h5{
+             font-size: 2.45rem;
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             color: $secondary-color;
+         }
+         & .btn-r-more{
+             background: $primary-color;
+             color: #fff;
+             font-family: "Rajdhani",sans-serif;
+             font-size: 1.76rem;
+             font-weight: 600;
+             padding: 0;
+             height: 50px;
+             width: 150px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+             margin: auto;
+             padding-left: 15px;
+             & span{
+                 background: $secondary-color;
+                 color: #fff;
+                 height: 50px;
+                 width: 40px;
+                 margin-left: auto;
+                 display: flex;
+                 align-items: center;
+                 & svg{
+                     width: 35px;
+                     height: 35px;
+                 }
+             }
+         }
+     }
+    }
+ 
+ }
+ 
+// design home why choose us 8
+
+.new-services-part-08{
+    background: #f9f9f9 url(../images/1-bg.png) no-repeat;
+    margin-top: 50px;
+    padding: 70px 0;
+    & .comon-heading{
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            } 
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            } 
+        }
+        & h1{
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: $secondary-color;
+            margin-top: 5px;
+        }
+    }
+    & .comon-sert{
+        width: 100%;
+        & h4{
+            color: $primary-color;
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 2.56rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            &:after{
+                width: 30px;
+                height: 2px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                right: 0;
+                top:0;
+                display: inline-block;
+                margin-left: 5px;
+            }
+        }
+        & .right-st-text{
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                font-size: 2.56rem;
+                color: $secondary-color;
+                margin-bottom: 8px;
+            }
+            & ul{
+                margin-top: 8px;
+                & li{
+                    line-height: 30px;
+                   & a{
+                    display: inline-block;
+                    width: 100%;
+                    position: relative;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 600;
+                    color: $secondary-color;
+                    display: flex;
+                    font-size: 1.65rem;
+                    &::before{
+                        content: "\f105";
+                        position: relative;
+                        left: 0;
+                        display: inline-block;
+                        font-family: "FontAwesome";
+                        margin-right: 5px;
+                        color: $primary-color;
+                    }
+                   }
+                }
+            }
+        }
+    }
+}
+
+
+// team 08
+
+.rt-team01{
+  & .comon-heading{
+    & h5{
+        &:before{
+            display: none;
+        }
+    }
+  }
+}
+
+
+
+// banner design 9
+
+
+.banner-part-09{
+    height: 580px;
+    position: relative;
+   
+    & .carousel-indicators{
+        bottom: 50px;
+    }
+    & .carousel-item{
+        & img{
+            @include coverimg;
+        }
+    }
+    & .carousel-inner{
+      height: 580px;
+    }
+    
+    & .carousel-caption{
+        height: 100%;
+        bottom: 40px;
+        display: grid;
+        align-content: center;
+        text-align: left;
+        left: 0;
+        right: 0;
+        & .inside-poi{
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            & h5{
+                font-family: "Shadows Into Light",cursive;
+                font-size: 3rem;
+                color: $primary-color;
+                text-transform: capitalize;
+            }
+            & h1{
+                font-size: 4.5rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 1.05;
+                color: $secondary-color;
+                & span{
+                    font-size: 4.5rem;
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                }
+            }
+            & p{
+                font-size: 1.65rem;
+                color: $secondary-color;
+            }
+            & .btn-more{
+                background: $primary-color;
+                color: #fff;
+                font-family: "Rajdhani",sans-serif;
+                font-weight:600;
+                text-transform: uppercase;
+                font-size: 1.62rem;
+                width: 150px;
+            }
+        
+        }
+        
+    }
+   
+}
+
+
+// about home design 9
+
+.about-home-09{
+    overflow: hidden;
+    & .com-about-us-img{
+        width: 100%;
+        height: 450px;
+        display: inline-block;
+        position: relative;
+
+        & .big-01{
+            display: inline-block;
+            overflow: hidden;
+            height:650px;
+            width:93%;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .sm01-01{
+            width: 60%;
+            height: 210px;
+            display: inline-block;
+            position: absolute;
+            left: -50px;
+            bottom: 0;
+            border: solid 17px #fff;
+            box-shadow: #0000001f 1px 2px 38px;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    & .com-about-right-h{
+        padding-top: 80px;
+        padding-left: 30px;
+        padding-right: 50px;
+        h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $secondary-color;
+            & span{
+                font-size: 4rem;
+                font-weight: 700;
+                font-family: "Rajdhani",sans-serif;
+            }
+        }
+        & h3{
+            font-family: "Rajdhani",sans-serif;
+            color: $primary-color; 
+            font-size: 4rem;
+            font-weight: 700;
+            & small{
+                font-size: 2rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                & svg{
+                    color: $secondary-color;
+                    width: 20px;
+                    height: 20px; 
+                }
+            }
+            & span{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 1.89rem;
+                color: $secondary-color;
+                font-weight: 700;
+              
+            }
+        }
+    }
+    & h6{
+        font-size: 1.56rem;
+    }
+}
+
+
+// client logo design 9
+.clients-slider-02{
+    background-image: radial-gradient(#e6e6e6 1px,transparent 0);
+    background-size: 15px 15px;
+    padding: 60px 0;
+  & .logo-clients{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 12%);
+    margin: 30px 0;
+    background: #fff;
+  }
+}
+
+
+
+
+// banner design 10
+
+
+.banner-part-10{
+    height: 580px;
+    position: relative;
+   
+    & .carousel-indicators{
+        bottom: 50px;
+    }
+    & .carousel-item{
+        height: 580px;
+        & .bg-01{
+            @include coverimg;
+        }
+    }
+    & .carousel-inner{
+      height: 580px;
+      position: relative;
+    }
+    
+    & .carousel-caption{
+        height: 100%;
+        bottom: 40px;
+        display: grid;
+        align-content: center;
+        text-align: left;
+        left: 0;
+        right: 0;
+        & .imgou-pic{
+            width:40%;
+            position: absolute;
+            bottom: -200px;
+        }
+        & h5{
+            font-family: "Shadows Into Light",cursive;
+            font-size: 3rem;
+            color: $primary-color;
+            text-transform: capitalize;
+        }
+        & h1{
+            font-size: 5rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.05;
+            color:#fff;
+            & span{
+                font-size: 5rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                color:#fff;
+            }
+        }
+        & p{
+            font-size: 1.65rem;
+            color:#fff;
+        }
+        & .btn-more{
+            background: $primary-color;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            font-weight:600;
+            text-transform: uppercase;
+            font-size: 2rem;
+            width: 170px;
+        }
+        
+        
+    }
+   
+}
+
+
+
+
+// about home design 10
+
+.about-home-10{
+    overflow: hidden;
+    background: $primary-color;
+    height: 650px;
+    & .com-about-right-h .nav-tabs .nav-item.show .nav-link, .com-about-right-h .nav-tabs .nav-link.active{
+        background: #fff;
+        color: $primary-color;
+    }
+    & .com-about-right-h .nav-tabs .nav-item.show .nav-link, .com-about-right-h .nav-tabs .nav-link{
+       color: #fff;
+    }
+    & .com-about-us-img{
+        width: 100%;
+        height: 450px;
+        display: inline-block;
+        position: relative;
+
+        & .big-01{
+            display: inline-block;
+            height:750px;
+            width:93%;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .sm01-01{
+            width: 60%;
+            height: 210px;
+            display: inline-block;
+            position: absolute;
+            left: -50px;
+            bottom: 0;
+            border: solid 17px #fff;
+            box-shadow: #0000001f 1px 2px 38px;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    & .com-about-right-h{
+        padding-top: 80px;
+        padding-left: 30px;
+        padding-right: 50px;
+        & li{
+            color: #fff;
+            & i{
+                color: #fff;
+            }
+        }
+        & p{
+            color: #fff;
+        }
+        & h6{
+            color: #fff;
+        }
+        h5{
+            color: #fff;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #fff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color:#fff;
+            & span{
+                font-size: 4rem;
+                font-weight: 700;
+                font-family: "Rajdhani",sans-serif;
+            }
+        }
+        & h3{
+            font-family: "Rajdhani",sans-serif;
+            color: $primary-color; 
+            font-size: 4rem;
+            font-weight: 700;
+            & small{
+                font-size: 2rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                & svg{
+                    color: $secondary-color;
+                    width: 20px;
+                    height: 20px; 
+                }
+            }
+            & span{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 1.89rem;
+                color: $secondary-color;
+                font-weight: 700;
+              
+            }
+        }
+    }
+    & h6{
+        font-size: 1.56rem;
+    }
+}
+
+
+
+
+// why scetion home 2
+
+.why-choose-10{
+    overflow: hidden;
+    position: relative;
+    top:-6px;
+    & .abouy-secrt-div{
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        & h6{
+            font-size: 1.65rem;
+            line-height: 25px;
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $secondary-color;
+            & span{
+                font-size: 4rem;
+                font-weight: 700;
+                font-family: "Rajdhani",sans-serif; 
+            }
+        }
+        & li{
+            display: flex;
+            align-items:center;
+            position: relative;
+            margin-bottom: 45px;
+            &:after{
+                display: inline-block;
+                content: "";
+                height: 80px;
+                background: $primary-color;
+                color: #fff;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 2px;
+                border: dashed 1px;
+                position: absolute;
+                top: 80px;
+                left: 39px;
+                
+            }
+            &:last-child{
+                &:after{
+                    display: none;
+                }
+            }
+            & .iconj{
+                width: 80px;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $primary-color;
+                margin-right: 18px;
+                border-radius: 50px;
+                padding:20px;
+                & img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+            & .text-01{
+                width: 80%;
+                display: inline-block;
+            }
+        }
+
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+    }
+    & .it-bgone{
+        display: inline-block;
+        width: 100%;
+        height: 800px;
+        & img{
+            @include coverimg;
+        }
+    }
+    & .left-part-whyu{
+        & h5{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $primary-color;
+            position: relative;
+            font-weight: 600;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            @include comhead01;
+            & span{
+                @include comhead01;  
+            }
+        }
+        & h6{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 1.66rem;
+            font-weight: 600;
+            color: $secondary-color;
+            width: 86%;
+        }
+        & .why-com-div{
+            width: 100%;
+            margin-bottom: 30px;
+            & figure{
+                width: 80px;
+                height: 80px;
+                background: $primary-color;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                padding: 20px;
+                border-radius: 40% 0 40% 40%;
+                & img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+            & .text-why-h{
+                width: 90%;
+                padding-left: 15px;
+                & h5{
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    font-size: 2.55rem;
+                    color: $secondary-color;
+                    &:after{
+                        display: none;
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    & .righty-why{
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+        overflow: hidden;
+        filter: drop-shadow(-1px 10px 18px rgba(50, 50, 0, 0.5));
+        & img{
+            @include coverimg;
+        }
+    }
+}
+
+
+
+
+// testimoials design 10
+
+.tetimonals-work-home-10{
+    background: url(../images/map.webp), url(../images/map-user.png) no-repeat;
+    background-size: cover , 100%;
+    background-position: center, center;
+ 
+    & .comon-heading{
+        text-align: center;
+        & h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 600;
+            font-family: "Rajdhani",sans-serif;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+            &:before{
+                width: 50px;
+                height: 4px;
+                background: #0060ff;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                left: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            color: $secondary-color;
+            text-transform: capitalize;
+            @include comhead01;
+            & span{
+                color: $secondary-color;
+                @include comhead01; 
+            }
+        }
+    }
+    & .dveo-text{
+        position: relative;
+        z-index: 2;
+        padding-top: 60px;
+        & h1{
+            color: $secondary-color;
+            @include comhead01;
+            & span{
+                color: $secondary-color;
+                @include comhead01; 
+            }
+        }
+        & p{
+            color: $secondary-color;
+            font-size: 1.65rem;
+        }
+        & .btn-more{
+            background: $primary-color;
+            width: 150px;
+            font-size: 1.65rem;
+            font-family: "Rajdhani",sans-serif;
+            height: 45px;
+            line-height: 34px;
+            font-weight: 600;
+            color: #fff;
+            
+        }
+        & .btn-play01{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 100%;
+            color: $primary-color;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            -webkit-animation: murad 1s linear infinite;
+            animation: murad 1.5s linear infinite;
+            -webkit-transition: .5s;
+            font-size: 3rem;
+            z-index: 1;
+            padding-left: 20px;
+
+                }
+    }
+    & .slider-tesr{
+        position: relative;
+        top:50px;
+        & .tems-slider01{
+            padding: 30px;
+            border-radius:8px;
+            height:auto;
+            margin-top:30px;
+            margin-bottom: 30px;
+            & .img-userpic{
+                height: 143px;
+                position: relative;
+                width: 20%;
+                margin: auto;
+                & figure{
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: auto;
+                    & img{
+                        @include coverimg;
+
+                    }
+                }
+                & .quite{
+                    background: $primary-color;
+                    width:45px;
+                    height: 45px;
+                    color: #fff;
+                    display: grid;
+                    align-content: center;
+                    justify-content: center;
+                    position: absolute;
+                    right: 40px;
+                    bottom:19px;
+                    border-radius: 50%;
+                }
+            }
+            & .para-details{
+                width: 70%;
+                margin: auto;
+                & p{
+                    font-size: 2rem;
+                    font-weight: 600;
+                    color: $secondary-color;
+                    font-family: "Rajdhani",sans-serif;
+                }
+                & h5{
+                    font-family: "Rajdhani",sans-serif;
+                    font-weight: 700;
+                    margin-top: 15px;
+                    font-size: 2rem;
+                    color: $secondary-color;
+                    & span{
+                        color: $primary-color;
+                        font-family: "Rajdhani",sans-serif;
+                        font-size: 1.45rem;
+                        margin-top: 5px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+.text01{
+  background: $primary-color;
+  color: #fff;
+  font-size: 4rem;
+  font-family: "Rajdhani",sans-serif;
+  text-align: center;
+  padding: 20px;
+  display: inline-block;
+  width: 211px;
+  font-weight: 700;
+  & span{
+    font-size: 2rem;
+    font-family: "Rajdhani",sans-serif;
+    font-weight: 600;
+  }
+}
+
+// service design 11
+.service-home-11{
+    padding: 90px 0;
+    margin-top: 80px;
+    & .comon-heading{
+       & h5{
+        color: #0060ff;
+        font-size: 2rem;
+        font-weight: 600;
+        font-family: "Rajdhani",sans-serif;
+        position: relative;
+        text-transform: uppercase;
+        &:before{
+            width: 50px;
+            height: 4px;
+            background: $primary-color;
+            content: "";
+            position: relative;
+            display: inline-block;
+            top: -4px;
+            left: -5px;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+        &:after{
+            width: 50px;
+            height: 4px;
+            background: $primary-color;
+            content: "";
+            position: relative;
+            display: inline-block;
+            top: -4px;
+            right: -5px;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+       }
+       & h1{
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #0b132b;
+            margin-top: 5px;
+
+       }
+    }
+    & .comon-ser11{
+        display: grid;
+        align-content: center;
+        width: 100%;
+        position: relative;
+        height: 450px;
+        overflow: hidden;
+       
+        & figure{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top:0;
+            width: 100%;
+            height: 100%;
+            & img{
+                transform: scale(1);
+                transition: all 0.5s;
+                @include coverimg;
+            }
+            &:after{
+                position: absolute;
+                content: "";
+                left: 0;
+                right: 0;
+                top: 0;
+                background: rgba(0,0,0,.7);
+                width: 100%;
+                display: inline-block;
+                z-index: 1;
+                height: 100%;
+            }
+        }
+        &:hover{
+            & figure{
+                & img{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        & .content-dibn{
+           position: relative;
+           z-index: 2;
+           display: inline-block;
+           text-align: center;
+           height: 450px;
+           overflow: hidden;
+           display: grid;
+           align-content: center;
+           padding: 0 40px;
+           & .btn-r-more{
+            background: $primary-color;
+            width: 50px;
+            height: 50px;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            margin: auto;
+            border-radius: 50%;
+            color: #fff !important;
+           }
+           & h5{
+            font-family: "Rajdhani",sans-serif;
+            font-size: 3rem;
+            color: #fff;
+            font-weight: 700;
+           }
+           & p{
+            color: #fff;
+            font-size: 1.45rem;
+            margin-top: 10px;
+           }
+        }
+    }
+    & .btn-all-vb{
+        background: $primary-color;
+        color: #fff;
+        font-size: 2rem;
+        font-family: "Rajdhani",sans-serif;
+        text-transform: capitalize;
+        width: 140px;
+        font-weight: 600;
+        & svg{
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+}
+
+.get-in-touch01{
+    position: relative;
+    z-index: 2;
+    bottom: -50px;
+    & .ink08{
+        background: url(../images/vb1.jpg) no-repeat;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+        height: 250px;
+        text-align: center;
+        & .btn-more02{
+            background: $secondary-color;
+            color: #fff;
+            width: 150px;
+            display: table;
+            margin: auto;
+            font-size: 1.65rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            text-transform: capitalize;
+            transition: all 0.5s;
+            &:hover{
+                background: #fff;
+                color: $primary-color;
+            }
+            & svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        & h5{
+            color: #fff;
+            font-size: 3rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+        }
+        & h1{
+            font-family: "Rajdhani",sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 4.2rem;
+        }
+    }
+
+
+}
+.btn-more02{
+
+}
+
+.faq-part-home{
+    padding: 90px 0;
+    & .righty-bg-faq{
+        height: 550px;
+        overflow: hidden;
+        filter: drop-shadow(-1px 10px 18px rgba(50, 50, 0, 0.5));
+        display: inline-block;
+        width: 100%;
+        & img{
+            @include coverimg;
+        }
+    }
+    & .comon-heading{
+        & h5{
+         color: #0060ff;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: $primary-color;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+        }
+        & h1{
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             font-size: 4rem;
+             color: #0b132b;
+             margin-top: 5px;
+ 
+        }
+     }
+    & .accordion-button{
+        font-family: "Rajdhani",sans-serif;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    & .accordion-button:not(.collapsed){
+        background-color: $secondary-color;
+        color: #fff;
+    }
+    & .accordion-button{
+        color: $primary-color;
+    }
+}
+
+
+// banner design index 12
+
+
+.banner-part-12{
+    height: 580px;
+    position: relative;
+    overflow: hidden;
+    & .img-left-bouncs{
+        position: absolute;
+        left: -90px;
+        top: -70px;
+        height: 344px;
+        z-index: 1;
+        opacity: 0.3;
+    }
+    & .img-slodid-color{
+        position: absolute;
+        left: -40px;
+        top: -20px;
+        height:150px;
+        z-index: 2;
+        background: $primary-color;
+        width: 150px;
+        border-radius: 50%;
+    }
+    & .img-right-bouncs{
+        position: absolute;
+        right: 0;
+        top:0;
+        z-index: 1;
+        opacity: 0.3;
+        right: -90px;
+        top: -70px;
+    }
+    & .img-right-squer{
+        position: absolute;
+        right: 0;
+        top:0;
+        z-index: 1;
+        right: 30px;
+        top:80px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: transparent;
+        border: solid 10px $primary-color;
+        display: inline-block;
+        transform: rotate(-30deg);
+
+    }
+    & .img-left-bouncs2{
+        position: absolute;
+        top:20% !important;
+        z-index: 1;
+        left: 40%;
+        width:30px;
+        height: 30px;
+        border-radius: 50%;
+        background:$primary-color;
+        display: inline-block;
+    }
+   
+    & .carousel-indicators{
+        bottom: 50px;
+    }
+    & .carousel-item{
+        height: 580px;
+        & .bg-01{
+            @include coverimg;
+        }
+    }
+    & .carousel-inner{
+      height: 580px;
+      position: relative;
+    }
+    
+    & .carousel-caption{
+        height: 100%;
+        bottom: 40px;
+        display: grid;
+        align-content: center;
+        text-align: left;
+        left: 0;
+        right: 0;
+        & .imgou-pic{
+            position: absolute;
+            bottom: -50px;
+        }
+        & h5{
+            font-family: "Shadows Into Light",cursive;
+            font-size: 3rem;
+            color: $primary-color;
+            text-transform: capitalize;
+        }
+        & h1{
+            font-size: 5rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.05;
+            color:#fff;
+            & span{
+                font-size: 5rem;
+                font-family: "Rajdhani",sans-serif;
+                font-weight: 700;
+                color:#fff;
+            }
+        }
+        & p{
+            font-size: 1.65rem;
+            color:#fff;
+        }
+        & .btn-more{
+            background: $primary-color;
+            color: #fff;
+            font-family: "Rajdhani",sans-serif;
+            font-weight:600;
+            text-transform: uppercase;
+            font-size: 2rem;
+            width: 196px;
+            display: flex;
+            align-items: center;
+            border-radius: 40px;
+            height: 56px;
+            justify-content: center;
+            transition: all 0.5s;
+           
+            & span{
+                background: #fff;
+                width: 30px;
+                height: 30px;
+                display: grid;
+                align-content: center;
+                justify-content: center;
+                text-align: center;
+                border-radius: 50%;
+                color: $primary-color;
+                margin-left: 8px;
+                transition: all 0.5s;
+                & i{
+                    font-size: 1.65rem;
+                }
+            }
+            &:hover{
+                background: #fff;
+                color: $primary-color;
+                & span{
+                    background: $primary-color;
+                    color: #fff;
+                }
+            }
+        }
+        
+        
+    }
+   
+}
+
+
+
+// header design 2
+
+.header-two{
+    & .top-sction-head{
+     background: $secondary-color;
+     color: #fff;
+     overflow: hidden;
+     &::before{
+         position: absolute;
+         left: 0;
+         top:0;
+         content: "";
+         height: 55px;
+         width: 145px;
+         background: $primary-color;
+         display: inline-block;
+     }
+     & i{
+        color: $primary-color;
+        margin-right: 5px;
+        font-size: 18px;
+     }
+     & svg{
+         color: $primary-color; 
+         width: 19px;
+         height: 19px;
+     }
+     & .socal-links{
+        
+         height: 55px;
+         position: relative;
+         margin-left: 58px;
+         
+         & li{
+             position: relative;
+             z-index: 2;
+             & a{
+                 line-height: 49px;
+                 margin: 0 14px;
+                 font-size: 18px;
+             }
+         }
+         & i{
+             color: #fff;
+             margin-right: 0;
+         }
+        
+    
+     }
+
+     & .left-head01{
+        background: $primary-color;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 55px;
+        & a{
+            & svg{
+                color: $secondary-color;
+            }
+            & i{
+                color: $secondary-color;
+            }
+        }
+        &::after{
+            position: absolute;
+            right: -10px;
+            top: -19px;
+            content: "";
+            height: 79px;
+            transform: skewX(-10deg);
+            width:45px;
+            background: $primary-color;
+            display: inline-block;
+        }
+     }
+    
+    }
+ }
+ .middle-sction{
+     & .btn-getst{
+         background: $primary-color;
+         color: #fff !important;
+         height: 45px;
+         border-radius: 50px;
+         text-transform: capitalize;
+         font-family: 'Rajdhani', sans-serif;
+         font-size: 1.69rem;
+         line-height: 3.45rem;
+         width: 150px;
+         margin-left: 15px;
+         display: flex;
+         justify-content: center;
+         transition: all 0.5s;
+         &:hover{
+             background: $secondary-color;
+         }
+         & span{
+             font-family: 'Rajdhani', sans-serif;
+             font-weight: 600;
+         }
+         & svg{
+             width: 30px;
+             height: 30px;
+             display: inline-block;
+         }
+     }
+     & .navbar-light .navbar-nav .nav-link{
+         font-family: 'Rajdhani', sans-serif;
+         font-weight: 600;
+         font-size: 1.89rem;
+         color: $secondary-color;
+         padding: 0 1.95rem;
+         transition: all 0.5s;
+         &:hover{
+             color: $primary-color;
+         }
+     }
+     & .navbar-light{
+         & .dropdown{
+             & > .nav-link{
+                 &::after{
+                     top: 0;
+                     right: -7px;
+                     position: absolute;
+                     content: "\f107";
+                     font-size: 1.75rem;
+                     font-weight: 600;
+                     font-family: "FontAwesome";
+                 }
+             }
+         }
+         
+         
+     }
+ }
+
+ .top-fatures-sections{
+    position: relative;
+    top:-40px;
+    & .row{
+        &  > div:last-child{
+            & .comon-section-divn{
+                background: $secondary-color;
+            }
+        }
+    }
+    & .comon-section-divn{
+        background: $primary-color;
+        padding: 20px;
+        justify-content: center;
+        box-shadow: 0px 0px 50px 0px rgb(0 0 0 / 34%);
+        height: 120px;
+        display: grid;
+        align-content: center;
+        position: relative;
+        & h1{
+            color: #fff;
+            opacity: 6%;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 700;
+            font-size: 8rem;
+            position: absolute;
+            left:10px;
+            top:-20px;
+        }
+        & figure{
+            width: 13%;
+            margin: auto;
+            text-align: center;
+            display: table;
+            & img{
+                filter: brightness(0) invert(1);
+            }
+        }
+        & .righty-divb{
+            width: 80%;
+            display: inline-block;
+            padding-left: 15px;
+            & h5{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 2.45rem;
+                font-weight: 700;
+                color: $secondary-color;
+                color: #fff;
+            }
+            & p{
+                color: #fff;
+            }
+        }
+    }
+ }
+ 
+
+//  about design home 12
+
+ .about-home-01{
+    & .com-about-us-img{
+        width: 100%;
+        height: 450px;
+        display: inline-block;
+        position: relative;
+
+        & .big-01{
+            display: inline-block;
+            overflow: hidden;
+            width:100%;
+          
+        }
+        & .sm01-01{
+            width: 60%;
+            height: 210px;
+            display: inline-block;
+            position: absolute;
+            left: -50px;
+            bottom: 0;
+            border: solid 17px #fff;
+            box-shadow: #0000001f 1px 2px 38px;
+            & img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    & .com-about-right-h{
+        h5{
+            color: $primary-color;
+            font-size: 2rem;
+            font-family: "Rajdhani",sans-serif;
+            font-weight: 600;
+            position: relative;
+            text-transform: uppercase;
+            &:after{
+                width: 50px;
+                height: 4px;
+                background: $primary-color;
+                content: "";
+                position: relative;
+                display: inline-block;
+                top: -4px;
+                right: -5px;
+                border-radius: 28px;
+                overflow: hidden;
+            }
+        }
+        & h1{
+            font-size: 4rem;
+            font-weight: 700;
+            color: $secondary-color;
+            & span{
+                font-size: 4rem;
+                font-weight: 700;
+                font-family: "Rajdhani",sans-serif;
+            }
+        }
+        & h3{
+            font-family: "Rajdhani",sans-serif;
+            color: $primary-color; 
+            font-size: 4rem;
+            font-weight: 700;
+            & small{
+                font-size: 2rem;
+                font-weight: 700;
+                color: $secondary-color;
+                font-family: "Rajdhani",sans-serif;
+                & svg{
+                    color: $secondary-color;
+                    width: 20px;
+                    height: 20px; 
+                }
+            }
+            & span{
+                font-family: "Rajdhani",sans-serif;
+                font-size: 1.89rem;
+                color: $secondary-color;
+                font-weight: 700;
+              
+            }
+        }
+    }
+    & h6{
+        font-size: 1.56rem;
+    }
+}
+
+
+
+// services design home 3
+
+.services-part-home-12{
+    background: $primary-color url(../images/1.png) no-repeat;
+    position: relative;
+    background-size: 100%;
+    background-position: top center;
+    margin-top: 90px;
+    padding: 80px 0;
+    & .comon-heading{
+     & h5{
+         color: #fff;
+         font-size: 2rem;
+         font-weight: 600;
+         font-family: "Rajdhani",sans-serif;
+         position: relative;
+         text-transform: uppercase;
+         &:after{
+             width: 50px;
+             height: 4px;
+             background: #fff;
+             content: "";
+             position: relative;
+             display: inline-block;
+             top: -4px;
+             right: -5px;
+             border-radius: 28px;
+             overflow: hidden;
+         }
+         &:before{
+            display: none;
+         }
+     }
+     & h1{
+         @include comhead01;
+         color: #fff;
+         margin-top: 5px;
+     }
+     & p{
+        color: #fff;
+     }
+     & .btn-all{
+        background: #fff;
+        color: $primary-color;
+        font-family: "Rajdhani",sans-serif;
+        width: 160px;
+        height: 50px;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: 600;
+        justify-content: center;
+        & span{
+            width: 30px;
+            height: 30px;
+            background: $primary-color;
+            color: #fff;
+            border-radius: 50px;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            margin-left: 10px;
+            & i{
+                font-size: 1.56rem;
+            }
+        }
+
+     }
+     
+    }
+ 
+    & .com-items{
+     background: #fff;
+     display: grid;
+     align-content: center;
+     justify-content: center;
+     width: 100%;
+     height: 280px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 10%);
+     margin: 0;
+     position: relative;
+     &:after{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: $secondary-color;
+        display: inline-block;
+        content: "";
+        transform: translateY(-400px);
+        transition: all 0.5s;
+     }
+     & .img-box-serv{
+         height: 60px;
+         display: inline-block;
+         width: 100%;
+         position: relative;
+         z-index: 1;
+         & figure{
+             display: inline-block;
+             height: 60px; 
+             width: 100%;
+             & img{
+                 transform: scale(1);
+                 transition: all 0.5s;
+                 @include coverimg;
+             }
+         }
+         & .icon-serv{
+             width:60px;
+             height:60px;
+             display: table;
+             margin-left: 20px;
+            //  margin: auto;
+            //  border-radius: 50%;
+            //  background:$primary-color;
+            //  box-shadow:4px 17px 40px rgb(0 96 255 / 65%);
+            //  padding: 22px;
+            //  & img{
+            //     filter: brightness(0) invert(1);
+            //  }
+         }
+         
+         
+     }
+     
+     & .text-serv{
+         padding: 0 30px;
+         position: relative;
+         z-index: 1;
+         margin-top: 15px;
+        
+         & h5{
+             font-size: 2.45rem;
+             font-family: "Rajdhani",sans-serif;
+             font-weight: 700;
+             color: $secondary-color;
+         }
+         & .btn-r-more{
+             background: $secondary-color;
+             color: #fff;
+             font-family: "Rajdhani",sans-serif;
+             font-size: 1.76rem;
+             font-weight: 600;
+             padding: 0;
+             height: 50px;
+             width: 50px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             overflow: hidden;
+             border-radius: 50%;
+             opacity: 0;
+             transform: translateY(-30px);
+             transition: all 0.5s;
+             position: absolute;
+             left: 0;
+             bottom: 50%;
+             right: 0;
+             margin: auto;
+             display: none;
+
+             & span{
+                 background: $secondary-color;
+                 color: #fff;
+                 height: 50px;
+                 width: 40px;
+                 margin-left: auto;
+                 display: flex;
+                 align-items: center;
+                 & svg{
+                     width: 35px;
+                     height: 35px;
+                 }
+             }
+         }
+     }
+     &:hover{
+        
